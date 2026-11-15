@@ -4,163 +4,170 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090d1b">
-  <meta name="description" content="RISE — an interactive Customer Solutions presentation.">
+  <meta name="description" content="RISE — an interactive exploration of AI, self-service and performance excellence.">
   <title>RISE | Customer Solutions</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="atmosphere" aria-hidden="true"><div class="glow glow-one"></div><div class="glow glow-two"></div><div class="grid-haze"></div></div>
-  <header class="topbar">
-    <button class="brand" type="button" data-go="home" aria-label="RISE, go home"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-name">RISE<span class="brand-dot">.</span></span></button>
-    <nav class="topnav" aria-label="Main navigation">
-      <button type="button" data-go="vision">Vision</button>
-      <button type="button" data-go="pillars">Priorities</button>
-      <button type="button" data-go="initiatives">Initiatives</button>
-      <button type="button" data-go="roadmap">Roadmap</button>
-      <button type="button" data-go="outcomes">Impact</button>
-    </nav>
-    <div class="header-actions">
-      <span class="event-date">23 NOV 2026 <span class="tiny-spark">✦</span> CUSTOMER SOLUTIONS</span>
-      <button class="icon-button" type="button" id="jump-open" title="Explore sections" aria-label="Explore sections">⌘</button>
-      <button class="icon-button" type="button" id="fullscreen" title="Toggle fullscreen" aria-label="Toggle fullscreen">⛶</button>
-    </div>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <section class="view is-active" id="view-home" data-view="home" aria-labelledby="home-title">
-      <div class="home-layout">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> THE NEXT CHAPTER STARTS HERE</div>
-          <div class="hero-title-wrap">
-            <h1 id="home-title" class="hero-title">Together,<br>we <span class="rise-word">RISE<svg viewBox="0 0 326 32" preserveAspectRatio="none" aria-hidden="true"><path d="M3 19 C65 8 132 11 188 16 S279 19 323 4" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span></h1>
-          </div>
-          <p class="hero-description">A shared ambition for smarter operations, more connected experiences, and a Customer Solutions team ready for what comes next.</p>
-          <div class="hero-cta">
-            <button type="button" class="button button-primary" data-go="vision">Explore our vision <span aria-hidden="true">↗</span></button>
-            <button type="button" class="button button-quiet" id="home-menu">Jump to a chapter <span aria-hidden="true">→</span></button>
-          </div>
-          <div class="hero-foot"><span class="pulse-dot"></span> ONE TEAM <span class="foot-sep">/</span> ONE DIRECTION <span class="foot-sep">/</span> SHARED IMPACT</div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orbit orbit-outer"></div><div class="orbit orbit-mid"></div><div class="orbit orbit-inner"></div>
-          <div class="orbital orbital-a"></div><div class="orbital orbital-b"></div><div class="orbital orbital-c"></div>
-          <div class="art-core"><div class="core-flare"></div><div class="core-word">RISE</div><div class="core-line">BUILDING WHAT'S NEXT</div></div>
-          <div class="art-label art-label-a">PEOPLE <span>↗</span></div><div class="art-label art-label-b">EXPERIENCE <span>↗</span></div><div class="art-label art-label-c">INNOVATION <span>↗</span></div>
-        </div>
-      </div>
-      <div class="section-trailer"><span>DISCOVER THE STORY</span><span class="trailer-line"></span><span>SCROLL-FREE. CLICK ANYWHERE.</span></div>
-      <div class="home-shortcuts" aria-label="Explore chapters">
-        <button data-go="vision"><span class="shortcut-no">01</span><strong>Our ambition</strong><span>↗</span></button>
-        <button data-go="pillars"><span class="shortcut-no">02</span><strong>Our priorities</strong><span>↗</span></button>
-        <button data-go="initiatives"><span class="shortcut-no">03</span><strong>What's taking shape</strong><span>↗</span></button>
-        <button data-go="outcomes"><span class="shortcut-no">04</span><strong>How we measure</strong><span>↗</span></button>
-      </div>
-    </section>
-
-    <section class="view" id="view-vision" data-view="vision" aria-labelledby="vision-title" hidden>
-      <div class="section-head"><span class="chapter-number">01 / OUR AMBITION</span><span class="chapter-tag">THE WHY</span></div>
-      <div class="vision-layout">
-        <div>
-          <p class="section-kicker">OUR NORTH STAR</p>
-          <h2 id="vision-title" class="display-title">Make every<br>interaction <em>count.</em></h2>
-          <p class="section-intro">We rise by making the complex simple. Better experiences for customers. Better tools for our people. Better outcomes for the business.</p>
-          <button class="text-link" type="button" data-go="pillars">See the priorities behind this vision <span>↗</span></button>
-        </div>
-        <div class="vision-manifesto">
-          <div class="manifesto-label">THREE THINGS WE BELIEVE</div>
-          <div class="manifesto-item"><span class="manifesto-index">01</span><div><h3>Customer first, always.</h3><p>Design around the complete journey—not just the individual contact.</p></div><span class="manifesto-plus">✦</span></div>
-          <div class="manifesto-item"><span class="manifesto-index">02</span><div><h3>Empower every colleague.</h3><p>Make knowledge, insight and smarter assistance part of everyday work.</p></div><span class="manifesto-plus">✦</span></div>
-          <div class="manifesto-item"><span class="manifesto-index">03</span><div><h3>Progress over complexity.</h3><p>Start with practical improvements, learn quickly and scale what works.</p></div><span class="manifesto-plus">✦</span></div>
-        </div>
-      </div>
-      <div class="bottom-quote">ONE COLLECTIVE DIRECTION. MANY WAYS TO MAKE IT REAL.</div>
-    </section>
-
-    <section class="view" id="view-pillars" data-view="pillars" aria-labelledby="pillars-title" hidden>
-      <div class="section-head"><span class="chapter-number">02 / WHERE WE FOCUS</span><span class="chapter-tag">THE WHAT</span></div>
-      <p class="section-kicker">THE BUILDING BLOCKS</p>
-      <h2 id="pillars-title" class="display-title mid-title">Five priorities. <em>One direction.</em></h2>
-      <p class="section-intro compact">Select a priority to see the intent behind it.</p>
-      <div class="pillar-grid">
-        <button class="pillar-card" type="button" data-detail="pillar-0"><span class="pillar-count">01 /</span><span class="pillar-symbol">◎</span><h3>Connected customer journeys</h3><p>Resolve more, with fewer handoffs.</p><span class="card-arrow">↗</span></button>
-        <button class="pillar-card" type="button" data-detail="pillar-1"><span class="pillar-count">02 /</span><span class="pillar-symbol">✧</span><h3>AI & intelligent operations</h3><p>Remove repetition. Unlock capacity.</p><span class="card-arrow">↗</span></button>
-        <button class="pillar-card" type="button" data-detail="pillar-2"><span class="pillar-count">03 /</span><span class="pillar-symbol">↗</span><h3>Empowered colleagues</h3><p>Put the right guidance in every hand.</p><span class="card-arrow">↗</span></button>
-        <button class="pillar-card" type="button" data-detail="pillar-3"><span class="pillar-count">04 /</span><span class="pillar-symbol">◈</span><h3>Quality & insight</h3><p>Turn interactions into improvement.</p><span class="card-arrow">↗</span></button>
-        <button class="pillar-card" type="button" data-detail="pillar-4"><span class="pillar-count">05 /</span><span class="pillar-symbol">∞</span><h3>Simpler ways of working</h3><p>Standardize, improve, then scale.</p><span class="card-arrow">↗</span></button>
-      </div>
-    </section>
-
-    <section class="view" id="view-initiatives" data-view="initiatives" aria-labelledby="initiatives-title" hidden>
-      <div class="section-head"><span class="chapter-number">03 / IN MOTION</span><span class="chapter-tag">THE HOW</span></div>
-      <div class="section-heading-row">
-        <div><p class="section-kicker">THE INNOVATION STUDIO</p><h2 id="initiatives-title" class="display-title mid-title">Ideas into <em>action.</em></h2><p class="section-intro compact">Explore practical initiatives. Each card opens a deeper view.</p></div>
-        <div class="filter-row" role="group" aria-label="Filter initiatives"><button type="button" class="filter is-selected" data-filter="all" aria-pressed="true">All</button><button type="button" class="filter" data-filter="AI" aria-pressed="false">AI</button><button type="button" class="filter" data-filter="Experience" aria-pressed="false">Experience</button><button type="button" class="filter" data-filter="Operations" aria-pressed="false">Operations</button></div>
-      </div>
-      <div id="initiative-grid" class="initiative-grid" aria-live="polite"></div>
-      <p class="editor-note">Illustrative initiatives for discussion. Replace with approved workstreams before presenting.</p>
-    </section>
-
-    <section class="view" id="view-roadmap" data-view="roadmap" aria-labelledby="roadmap-title" hidden>
-      <div class="section-head"><span class="chapter-number">04 / THE PATH AHEAD</span><span class="chapter-tag">THE WHEN</span></div>
-      <p class="section-kicker">FROM AMBITION TO ACTION</p><h2 id="roadmap-title" class="display-title mid-title">Build. Learn. <em>Rise.</em></h2>
-      <p class="section-intro compact">A practical one-year delivery rhythm—not a fixed commitment or a multiyear transformation promise.</p>
-      <div class="roadmap-track">
-        <div class="roadmap-card"><span class="roadmap-top"><span class="roadmap-dot"></span><span>PHASE 01</span></span><div class="phase-time">0–90 days</div><h3>Align & prioritize</h3><p>Map high-volume journeys, confirm baselines, and select opportunities with the business.</p><span class="phase-icon">01 ↗</span></div>
-        <div class="roadmap-card"><span class="roadmap-top"><span class="roadmap-dot"></span><span>PHASE 02</span></span><div class="phase-time">Months 3–6</div><h3>Pilot & prove</h3><p>Run focused pilots, remove friction, and measure the effect on customers and teams.</p><span class="phase-icon">02 ↗</span></div>
-        <div class="roadmap-card"><span class="roadmap-top"><span class="roadmap-dot"></span><span>PHASE 03</span></span><div class="phase-time">Months 6–9</div><h3>Scale what works</h3><p>Expand proven approaches across relevant journeys and business units.</p><span class="phase-icon">03 ↗</span></div>
-        <div class="roadmap-card"><span class="roadmap-top"><span class="roadmap-dot"></span><span>PHASE 04</span></span><div class="phase-time">Months 9–12</div><h3>Embed & improve</h3><p>Strengthen ownership, share lessons, and set the next improvement cycle.</p><span class="phase-icon">04 ↗</span></div>
-      </div>
-      <div class="roadmap-footnote">Planning framework only. Milestones and ownership require team validation.</div>
-    </section>
-
-    <section class="view" id="view-outcomes" data-view="outcomes" aria-labelledby="outcomes-title" hidden>
-      <div class="section-head"><span class="chapter-number">05 / WHAT SUCCESS LOOKS LIKE</span><span class="chapter-tag">THE IMPACT</span></div>
-      <div class="outcomes-layout">
-        <div class="outcomes-copy"><p class="section-kicker">MEASURE WHAT MATTERS</p><h2 id="outcomes-title" class="display-title">Better outcomes.<br><em>Visible progress.</em></h2><p class="section-intro">The goal isn't more activity. It's tangible improvement to the customer journey and the way we operate.</p><button class="button button-primary" type="button" data-go="closing">Bring it together <span>↗</span></button></div>
-        <div class="outcome-metrics">
-          <div class="metric-tile"><span class="metric-icon">↙</span><span class="metric-title">Reduced repeat contacts</span><span class="metric-desc">Track avoidable repeat demand with a clear definition and baseline.</span></div>
-          <div class="metric-tile"><span class="metric-icon">↗</span><span class="metric-title">Productivity released</span><span class="metric-desc">Measure time saved and capacity returned to high-value work.</span></div>
-          <div class="metric-tile"><span class="metric-icon">◎</span><span class="metric-title">Improved resolution</span><span class="metric-desc">Monitor end-to-end outcomes and reduced transfers.</span></div>
-          <div class="metric-tile"><span class="metric-icon">✧</span><span class="metric-title">Quality & adoption</span><span class="metric-desc">Track coaching, consistency, and meaningful use of new tools.</span></div>
-        </div>
-      </div>
-      <p class="editor-note">Targets intentionally omitted until approved; do not present these as achieved results.</p>
-    </section>
-
-    <section class="view" id="view-closing" data-view="closing" aria-labelledby="closing-title" hidden>
-      <div class="closing-center"><div class="closing-ring" aria-hidden="true"><span>✦</span></div><p class="section-kicker">ONE TEAM. ONE SHARED FUTURE.</p><h2 id="closing-title" class="closing-title">The next chapter<br>is <em>ours to build.</em></h2><p>Progress happens when every team has a part to play.</p><div class="closing-actions"><button class="button button-primary" type="button" data-go="home">Back to the beginning ↗</button><button class="button button-quiet" type="button" data-go="initiatives">Explore initiatives →</button></div><div class="closing-signature">RISE <span>·</span> CUSTOMER SOLUTIONS</div></div>
-    </section>
-  </main>
-
-  <footer class="presentation-dock" aria-label="Presentation controls">
-    <button type="button" class="dock-button" id="prev-screen" aria-label="Previous chapter">←</button>
-    <button type="button" class="dock-current" id="dock-jump" title="Explore all chapters"><span id="current-number">00</span><span class="dock-divider">/</span><span id="total-number">06</span><span class="dock-label" id="current-name">Welcome</span><span class="dock-chevron">⌄</span></button>
-    <div class="dock-progress" aria-hidden="true"><div id="dock-progress-fill"></div></div>
-    <button type="button" class="dock-button dock-next" id="next-screen" aria-label="Next chapter">→</button>
-  </footer>
-
-  <div class="dialog-backdrop" id="detail-dialog" hidden>
-    <div class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-      <button class="dialog-close" type="button" data-close aria-label="Close details">×</button>
-      <span class="dialog-overline" id="detail-category">RISE / EXPLORE</span>
-      <div class="dialog-glyph" aria-hidden="true">✧</div>
-      <h2 id="detail-title"></h2>
-      <p class="dialog-lead" id="detail-description"></p>
-      <div id="detail-facts" class="dialog-facts"></div>
-      <div class="dialog-footer"><span>RISE · CUSTOMER SOLUTIONS</span><button type="button" data-close class="text-link">Back to presentation ↗</button></div>
-    </div>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="atmosphere" aria-hidden="true"><div class="glow glow-one"></div><div class="glow glow-two"></div><div class="grid-haze"></div></div>
+<header class="topbar">
+  <button class="brand" type="button" data-go="home" aria-label="RISE — go home"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-name">RISE<span class="brand-dot">.</span></span></button>
+  <nav class="topnav" aria-label="Presentation themes">
+    <button type="button" data-go="theme1">01 &nbsp; AI & Self-Service</button>
+    <button type="button" data-go="theme2">02 &nbsp; AI, Automation & Performance</button>
+    <button type="button" data-go="demo-qa">QA.MAFer.AI ↗</button>
+    <button type="button" data-go="demo-service360">SHARE Service360 ↗</button>
+  </nav>
+  <div class="header-actions">
+    <span class="event-date">23 NOV 2026 <span class="tiny-spark">✦</span> CUSTOMER SOLUTIONS</span>
+    <button class="icon-button" type="button" id="jump-open" title="Choose a section" aria-label="Choose a section">⌘</button>
+    <button class="icon-button" type="button" id="fullscreen" title="Toggle fullscreen" aria-label="Toggle fullscreen">⛶</button>
   </div>
-
-  <div class="dialog-backdrop jump-backdrop" id="jump-dialog" hidden>
-    <div class="jump-panel" role="dialog" aria-modal="true" aria-labelledby="jump-title">
-      <div class="jump-header"><div><p class="section-kicker">QUICK NAVIGATION</p><h2 id="jump-title">Where to next?</h2></div><button class="dialog-close" type="button" data-close aria-label="Close navigation">×</button></div>
-      <div id="jump-links" class="jump-links"></div>
-      <p class="jump-hint">Tip: use ← → to move between chapters, F for fullscreen, and Esc to close.</p>
+</header>
+<main id="main" tabindex="-1">
+  <section class="view is-active" id="view-home" data-view="home" aria-labelledby="home-title">
+    <div class="rise-home-grid">
+      <div class="rise-home-hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CUSTOMER SOLUTIONS · 23 NOVEMBER 2026</div>
+        <h1 id="home-title" class="hero-title">Together,<br>we <span class="rise-word">RISE<svg viewBox="0 0 326 32" preserveAspectRatio="none" aria-hidden="true"><path d="M3 19 C65 8 132 11 188 16 S279 19 323 4" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span></h1>
+        <p class="hero-description">From smarter customer self-service to intelligent, high-performing operations. Two themes. One connected story.</p>
+        <div class="hero-cta"><button type="button" class="button button-primary" data-go="theme1">Start the experience <span aria-hidden="true">↗</span></button><button type="button" class="button button-quiet" data-go="theme2">Explore live demos <span aria-hidden="true">→</span></button></div>
+        <div class="hero-foot"><span class="pulse-dot"></span> SIMPLIFY <span class="foot-sep">/</span> AUTOMATE <span class="foot-sep">/</span> ELEVATE</div>
+      </div>
+      <div class="rise-orbit-art" aria-hidden="true">
+        <div class="orbit orbit-outer"></div><div class="orbit orbit-mid"></div><div class="orbit orbit-inner"></div>
+        <div class="orbital orbital-a"></div><div class="orbital orbital-b"></div><div class="orbital orbital-c"></div>
+        <div class="art-core"><div class="core-flare"></div><div class="core-word">RISE</div><div class="core-line">OUR NEXT CHAPTER</div></div>
+        <div class="art-label art-label-a">SELF-SERVICE <span>↗</span></div><div class="art-label art-label-b">INTELLIGENCE <span>↗</span></div><div class="art-label art-label-c">EXCELLENCE <span>↗</span></div>
+      </div>
     </div>
-  </div>
+    <div class="theme-home-grid" aria-label="Explore the two themes">
+      <button class="theme-home-card theme-one" type="button" data-go="theme1">
+        <span class="theme-home-overline">THEME 01 <span class="theme-chip">WHAT WE'VE DELIVERED</span></span>
+        <span class="theme-home-name">AI & Self-Service</span>
+        <span class="theme-home-description">Contact-centre innovations already delivered across AI-assisted service and voice journeys.</span>
+        <span class="theme-home-arrow">EXPLORE DELIVERIES &nbsp; ↗</span>
+      </button>
+      <button class="theme-home-card theme-two" type="button" data-go="theme2">
+        <span class="theme-home-overline">THEME 02 <span class="theme-chip">INTERACTIVE SHOWCASE</span></span>
+        <span class="theme-home-name">AI, Automation &<br>Performance Excellence</span>
+        <span class="theme-home-description">Step inside QA.MAFer.AI and SHARE Service360—without leaving the RISE experience.</span>
+        <span class="theme-home-arrow">OPEN INNOVATION STUDIO &nbsp; ↗</span>
+      </button>
+    </div>
+  </section>
 
-  <div class="keyboard-hint">PRESS <kbd>←</kbd> <kbd>→</kbd> TO EXPLORE <span>·</span> <kbd>F</kbd> FULLSCREEN</div>
+  <section class="view" id="view-theme1" data-view="theme1" aria-labelledby="theme1-title" hidden>
+    <div class="section-head"><span class="chapter-number">THEME 01 / AI & SELF-SERVICE</span><span class="chapter-tag">DELIVERED CAPABILITIES</span></div>
+    <div class="theme-heading-layout">
+      <div><p class="section-kicker">WHAT WE'VE DELIVERED</p><h2 id="theme1-title" class="display-title theme-display">Better service.<br><em>Powered by AI.</em></h2></div>
+      <div class="theme-heading-aside">Intelligent customer support and streamlined contact-centre journeys—moving from traditional handling towards more helpful self-service.</div>
+    </div>
+    <div class="delivery-grid">
+      <button type="button" class="delivery-card" data-delivery="ksa">
+        <div class="delivery-top"><span class="delivery-sequence">01 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
+        <div class="delivery-icon">✧</div><div class="delivery-type">SHARE · ASSISTIVE AI</div><h3>KSA launch</h3><p>AI-powered support introduced for SHARE customer interactions.</p>
+        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
+      </button>
+      <button type="button" class="delivery-card" data-delivery="oman">
+        <div class="delivery-top"><span class="delivery-sequence">02 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
+        <div class="delivery-icon">◎</div><div class="delivery-type">SHARE · ASSISTIVE AI</div><h3>Oman launch</h3><p>Expanded AI-supported customer service to another market.</p>
+        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
+      </button>
+      <button type="button" class="delivery-card" data-delivery="ivr">
+        <div class="delivery-top"><span class="delivery-sequence">03 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
+        <div class="delivery-icon">↗</div><div class="delivery-type">CONTACT CENTRE · VOICE</div><h3>Voice & IVR modernization</h3><p>Updated the underlying voice environment and validated connected service journeys.</p>
+        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
+      </button>
+    </div>
+    <div class="journey-ribbon">
+      <div><span class="ribbon-overline">THE EXPERIENCE WE'RE BUILDING ON</span><strong>A simpler customer journey</strong></div>
+      <div class="ribbon-steps"><span>Customer need</span><i>→</i><span>AI / self-service</span><i>→</i><span>Resolution or advisor</span></div>
+    </div>
+    <p class="editor-note">Delivery summary for content review; operational numbers and internal system details are intentionally excluded from this public-hosted version.</p>
+    <div class="theme-next"><button class="text-link" data-go="theme2" type="button">Next: AI, Automation & Performance Excellence &nbsp; ↗</button></div>
+  </section>
+
+  <section class="view" id="view-theme2" data-view="theme2" aria-labelledby="theme2-title" hidden>
+    <div class="section-head"><span class="chapter-number">THEME 02 / AI, AUTOMATION & PERFORMANCE EXCELLENCE</span><span class="chapter-tag">LIVE PRODUCT SHOWCASE</span></div>
+    <p class="section-kicker">BUILT TO ENABLE BETTER OPERATIONS</p>
+    <h2 id="theme2-title" class="display-title mid-title">Don't just hear about it.<br><em>Experience it.</em></h2>
+    <p class="section-intro compact">Explore two interactive product experiences directly inside RISE. Select a platform to launch its demonstration.</p>
+    <div class="product-showcase-grid">
+      <article class="showcase-product qa-showcase">
+        <div class="showcase-product-top"><span class="showcase-counter">01 / INTELLIGENT QUALITY</span><span class="showcase-mark">✦</span></div>
+        <div class="product-preview qa-preview" aria-hidden="true">
+          <div class="fake-window-top"><span></span><span></span><span></span><small>QA.MAFer.AI / PERFORMANCE INTELLIGENCE</small></div>
+          <div class="qa-preview-main"><div class="qa-preview-score">96<span>%</span><small>ILLUSTRATIVE</small></div><div class="qa-preview-bars"><i></i><i></i><i></i><i></i><i></i></div><div class="qa-preview-stats"><b>QUALITY</b><b>EVIDENCE</b><b>COACHING</b></div></div>
+        </div>
+        <div class="showcase-content"><div class="showcase-product-eyebrow">RULES + AI · QUALITY ASSURANCE</div><h3>QA.MAFer.AI</h3><p>Evidence-led quality assessment, governed rubrics, agent performance and actionable coaching opportunities.</p>
+          <div class="feature-chips"><span>QA scoring</span><span>Rubric governance</span><span>Performance insights</span></div>
+          <div class="showcase-actions"><button type="button" class="button button-primary" data-go="demo-qa">Launch inside RISE <span>↗</span></button><a class="button button-quiet" data-external="qa" target="_blank" rel="noopener noreferrer">Open standalone ↗</a></div>
+        </div>
+      </article>
+      <article class="showcase-product service-showcase">
+        <div class="showcase-product-top"><span class="showcase-counter">02 / COLLEAGUE ENABLEMENT</span><span class="showcase-mark">◈</span></div>
+        <div class="product-preview service-preview" aria-hidden="true">
+          <div class="fake-window-top"><span></span><span></span><span></span><small>SHARE SERVICE360 / AMBASSADOR VIEW</small></div>
+          <div class="service-preview-main"><div class="service-preview-circle"><span>360°</span></div><div class="service-preview-widgets"><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="showcase-content"><div class="showcase-product-eyebrow">EXPERIENCE + ENABLEMENT · OPERATIONS</div><h3>SHARE Service360</h3><p>One connected view of ambassador performance, knowledge, training progression and operational engagement.</p>
+          <div class="feature-chips"><span>Ambassador view</span><span>BU insights</span><span>Training & knowledge</span></div>
+          <div class="showcase-actions"><button type="button" class="button button-primary" data-go="demo-service360">Launch inside RISE <span>↗</span></button><a class="button button-quiet" data-external="service360" target="_blank" rel="noopener noreferrer">Open standalone ↗</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="editor-note">The visuals above are illustrative. Use the launch buttons for the actual application demos. Embedding depends on each source site's browser security settings.</p>
+  </section>
+
+  <section class="view demo-view" id="view-demo-qa" data-view="demo-qa" aria-labelledby="qa-demo-title" hidden>
+    <div class="demo-toolbar">
+      <div class="demo-identity"><span class="demo-back-wrap"><button type="button" data-go="theme2" class="demo-back" aria-label="Return to Theme 2">←</button></span><span class="demo-platform-icon">✦</span><span><span class="demo-mini-eyebrow">LIVE DEMONSTRATION · THEME 02</span><strong id="qa-demo-title">QA.MAFer.AI</strong></span></div>
+      <div class="demo-controls"><span class="demo-badge">INTERACTIVE APPLICATION</span><button type="button" data-reload="qa">↻ Reload</button><a data-external="qa" href="#" target="_blank" rel="noopener noreferrer">↗ Open separately</a><button type="button" data-zoom="qa">⛶ Expand</button></div>
+    </div>
+    <div class="demo-shell" id="shell-qa">
+      <div class="demo-placeholder" id="placeholder-qa"><div class="demo-loading-mark">✦</div><h3>Launching QA.MAFer.AI</h3><p>Loading the application within RISE. If a blank screen or browser restriction appears, choose “Open separately” above.</p></div>
+      <iframe id="frame-qa" title="QA.MAFer.AI interactive demo" allow="fullscreen; clipboard-read; clipboard-write" referrerpolicy="no-referrer" loading="eager"></iframe>
+    </div>
+    <div class="demo-bottom"><span>The RISE navigation stays available while you explore the real app.</span><button type="button" data-go="demo-service360">Next demo: SHARE Service360 &nbsp; ↗</button></div>
+  </section>
+
+  <section class="view demo-view" id="view-demo-service360" data-view="demo-service360" aria-labelledby="service-demo-title" hidden>
+    <div class="demo-toolbar">
+      <div class="demo-identity"><span class="demo-back-wrap"><button type="button" data-go="theme2" class="demo-back" aria-label="Return to Theme 2">←</button></span><span class="demo-platform-icon service-icon">◈</span><span><span class="demo-mini-eyebrow">LIVE DEMONSTRATION · THEME 02</span><strong id="service-demo-title">SHARE Service360</strong></span></div>
+      <div class="demo-controls"><span class="demo-badge">INTERACTIVE APPLICATION</span><button type="button" data-reload="service360">↻ Reload</button><a data-external="service360" href="#" target="_blank" rel="noopener noreferrer">↗ Open separately</a><button type="button" data-zoom="service360">⛶ Expand</button></div>
+    </div>
+    <div class="demo-shell" id="shell-service360">
+      <div class="demo-placeholder" id="placeholder-service360"><div class="demo-loading-mark">◈</div><h3>Launching SHARE Service360</h3><p>Loading the application within RISE. If a blank screen or browser restriction appears, choose “Open separately” above.</p></div>
+      <iframe id="frame-service360" title="SHARE Service360 interactive demo" allow="fullscreen; clipboard-read; clipboard-write" referrerpolicy="no-referrer" loading="eager"></iframe>
+    </div>
+    <div class="demo-bottom"><span>Switch between demos without closing the presentation.</span><button type="button" data-go="demo-qa">Back to QA.MAFer.AI &nbsp; ↗</button></div>
+  </section>
+
+  <section class="view" id="view-closing" data-view="closing" aria-labelledby="closing-title" hidden>
+    <div class="closing-center"><div class="closing-ring" aria-hidden="true"><span>✦</span></div><p class="section-kicker">TWO THEMES. ONE CONNECTED FUTURE.</p><h2 id="closing-title" class="closing-title">We didn't just imagine<br>what's next. <em>We RISE.</em></h2><p>Smarter service. Better tools. Continuous excellence.</p><div class="closing-actions"><button class="button button-primary" type="button" data-go="home">Return home ↗</button><button class="button button-quiet" type="button" data-go="theme2">Revisit live demonstrations →</button></div><div class="closing-signature">RISE <span>·</span> CUSTOMER SOLUTIONS</div></div>
+  </section>
+</main>
+
+<footer class="presentation-dock" aria-label="Presentation controls">
+  <button type="button" class="dock-button" id="prev-screen" aria-label="Previous section">←</button>
+  <button type="button" class="dock-current" id="dock-jump" title="Explore sections"><span id="current-number">00</span><span class="dock-divider">/</span><span id="total-number">05</span><span class="dock-label" id="current-name">Welcome</span><span class="dock-chevron">⌄</span></button>
+  <div class="dock-progress" aria-hidden="true"><div id="dock-progress-fill"></div></div>
+  <button type="button" class="dock-button dock-next" id="next-screen" aria-label="Next section">→</button>
+</footer>
+<div class="dialog-backdrop" id="detail-dialog" hidden>
+  <div class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+    <button class="dialog-close" type="button" data-close aria-label="Close details">×</button>
+    <span class="dialog-overline" id="detail-category">RISE / DELIVERY</span>
+    <div class="dialog-glyph" aria-hidden="true">✧</div><h2 id="detail-title"></h2><p class="dialog-lead" id="detail-description"></p><div id="detail-facts" class="dialog-facts"></div>
+    <div class="dialog-footer"><span>RISE · CUSTOMER SOLUTIONS</span><button type="button" data-close class="text-link">Back to Theme 1 ↗</button></div>
+  </div>
+</div>
+<div class="dialog-backdrop jump-backdrop" id="jump-dialog" hidden>
+  <div class="jump-panel" role="dialog" aria-modal="true" aria-labelledby="jump-title"><div class="jump-header"><div><p class="section-kicker">QUICK NAVIGATION</p><h2 id="jump-title">Where to next?</h2></div><button class="dialog-close" type="button" data-close aria-label="Close navigation">×</button></div><div id="jump-links" class="jump-links"></div><p class="jump-hint">Use ← → to change section, F for fullscreen, and Escape to close.</p></div>
+</div>
+<div class="keyboard-hint">PRESS <kbd>←</kbd> <kbd>→</kbd> TO EXPLORE <span>·</span> <kbd>F</kbd> FULLSCREEN</div>
 </body>
 </html>
