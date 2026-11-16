@@ -148,3 +148,51 @@ main{position:relative;z-index:1;padding:0 max(5.3vw,24px) 90px;min-height:calc(
   .demo-controls button,.demo-controls a{flex:1;text-align:center}
   .demo-identity strong{font-size:18px}
 }
+
+
+/* MOBILE RELIABILITY PASS | RISE | 2026-11-16
+   Keep this last so it takes precedence over prior responsive declarations. */
+html,body{max-width:100%;overflow-x:clip}
+main,.view,.rise-home-grid,.rise-home-hero,.theme-home-grid,.theme-home-card,.showcase-product,.demo-toolbar{min-width:0}
+.theme-home-card{appearance:none;-webkit-appearance:none;text-align:left;color:#f5f7ff;background:linear-gradient(130deg,#152f47,#122039 66%,#10192e);border:1px solid rgba(129,167,236,.28)}
+.theme-home-card.theme-two{background:linear-gradient(120deg,#272249,#181e3a 65%,#111a2c)}
+.theme-home-card .theme-home-name,.theme-home-card .theme-home-description,.theme-home-card .theme-home-overline,.theme-home-card .theme-home-arrow{display:block;max-width:100%;overflow-wrap:break-word;text-align:left}
+.theme-home-card .theme-home-overline{display:flex}
+@media(max-width:760px){
+  html,body{width:100%;min-width:0}
+  main{width:100%;padding:0 18px 96px}
+  .rise-home-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:auto}
+  .rise-home-hero{width:100%;padding:35px 0 17px}
+  .rise-home-hero .eyebrow{font-size:9px;letter-spacing:1.5px;line-height:1.6}
+  .rise-home-hero .hero-title-wrap{margin:20px 0}
+  .rise-home-hero .hero-title{font-size:clamp(49px,11vw,74px);line-height:1.08;letter-spacing:-.075em;max-width:100%;overflow-wrap:normal}
+  .rise-home-hero .hero-description{font-size:14px;line-height:1.7;margin:27px 0 22px;max-width:100%}
+  .rise-home-hero .hero-cta{display:grid;grid-template-columns:1fr;gap:9px}
+  .rise-home-hero .hero-cta .button{width:100%;min-height:48px;gap:10px}
+  .rise-home-hero .hero-foot{font-size:8px;letter-spacing:1.2px;gap:9px;margin-top:28px;flex-wrap:wrap}
+  /* Artistic orbits are designed for wide screens: suppress on mobile to prevent text collisions. */
+  .rise-orbit-art{display:none!important}
+  .theme-home-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin:15px 0 25px}
+  .theme-home-card{width:100%;min-height:192px;padding:22px;border-radius:15px}
+  .theme-home-card .theme-home-overline{font-size:9px;letter-spacing:1.2px;line-height:1.5;gap:9px}
+  .theme-home-card .theme-chip{font-size:8px;letter-spacing:.6px}
+  .theme-home-card .theme-home-name{font-size:clamp(24px,6vw,31px);line-height:1.16;letter-spacing:-.9px;margin:16px 0 10px}
+  .theme-home-card .theme-home-description{font-size:12px;line-height:1.65;margin-bottom:15px;color:#c1cde1}
+  .theme-home-card .theme-home-arrow{font-size:10px}
+  .theme-heading-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .theme-display{font-size:clamp(39px,9vw,65px);line-height:1.12;letter-spacing:-.06em}
+  .theme-heading-aside{font-size:13px;line-height:1.7;padding:0}
+  .product-showcase-grid,.delivery-grid{grid-template-columns:minmax(0,1fr)}
+  .showcase-product,.delivery-card{min-width:0}
+  .demo-controls{width:100%}
+  .demo-shell{min-height:390px}
+  .presentation-dock{max-width:calc(100% - 22px)}
+}
+@media(max-width:380px){
+  .rise-home-hero .hero-title{font-size:clamp(44px,12vw,52px)}
+  .rise-home-hero .hero-description{font-size:13px}
+  .rise-home-hero .eyebrow{font-size:8px}
+  .theme-home-card{padding:19px}
+  .theme-home-card .theme-home-name{font-size:24px}
+  .dock-label{max-width:125px;overflow:hidden;text-overflow:ellipsis}
+}
