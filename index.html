@@ -145,18 +145,159 @@
 @media(min-width:801px) and (max-height:740px){.priority{padding:5px 7px}.priority p{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}}
 @media(max-width:800px){.header-actions{gap:5px}.nav-trigger{font-size:10px;padding:8px 10px}.topbar .year{display:none}.demo-actions .switch-demo{display:none}.explore-panel{padding:20px 17px}.explore-links button{font-size:13px;padding:10px}.priority{padding:4px 5px;margin:0}.priority p{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.priority:after{font-size:8px;margin-top:3px}}
 
+
+/* EDITORIAL WEBSITE LAYOUT — 16 NOV 2026
+   Reference: narrow-centered overview, burgundy rules, slim top navigation,
+   large typography, a single featured story. No fixed slide sequence. */
+:root{--site-head-h:62px;--burgundy:#4b0027;--purple:#320083;--pink:#cca7b5}
+.site-header{height:var(--site-head-h);width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 clamp(21px,2.2vw,43px);background:#fff;box-shadow:0 4px 11px #0000001c;position:relative;z-index:12}
+.site-brand{display:flex;align-items:center;gap:8px;min-width:0;color:#aa8d42;border:0;background:transparent;padding:0}
+.brand-symbol{width:31px;height:35px;display:flex;align-items:center;justify-content:center}
+.brand-symbol svg{width:28px;height:30px}
+.brand-wordmark{font-size:10px;line-height:1.2;font-weight:700;letter-spacing:.65px;color:#8d763a;white-space:nowrap}
+.site-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(16px,2.3vw,44px)}
+.site-links button{border:0;background:transparent;color:#262127;font-size:clamp(10px,.75vw,13px);font-weight:400;padding:12px 0;white-space:nowrap;position:relative}
+.site-links button:after{content:"";position:absolute;bottom:7px;left:0;right:100%;height:1px;background:var(--burgundy);transition:right .18s}
+.site-links button:hover:after,.site-links button.is-current:after{right:0}
+#app{height:calc(100vh - var(--site-head-h));height:calc(100dvh - var(--site-head-h))}
+#screen-home.home{display:none;background:#fff;padding:0;align-items:initial;justify-content:initial}
+#screen-home.home.active{display:flex}
+.editorial-landing{display:flex;flex-direction:column;width:min(850px,calc(100% - 56px));height:100%;margin:0 auto;min-height:0;padding:clamp(18px,3.2vh,35px) 0 clamp(9px,1.6vh,20px)}
+.landing-topline{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1.5px solid var(--burgundy);padding:0 0 13px 0;font-size:12px;letter-spacing:1.8px;color:var(--burgundy);font-weight:700}
+.landing-topline span:last-child{font-size:9px;letter-spacing:.75px}
+.landing-intro{flex:0 0 auto;margin:clamp(19px,3.1vh,36px) 0 clamp(17px,2.8vh,30px)}
+.landing-intro h1{color:var(--burgundy);font-size:clamp(47px,min(5.5vw,8.9vh),82px);letter-spacing:-2.7px;line-height:.94;font-weight:800;margin:0 0 clamp(7px,1.4vh,13px)}
+.landing-intro p{font-size:clamp(12px,1.15vw,17px);line-height:1.36;font-weight:700;color:var(--burgundy);margin:0;letter-spacing:-.12px}
+.landing-navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;flex:0 0 auto}
+.landing-navigation button{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:left;background:transparent;border:0;border-bottom:1.5px solid var(--burgundy);padding:10px 3px 12px;color:var(--burgundy);font-size:clamp(9px,.87vw,12px);letter-spacing:.05px;line-height:1.45;min-width:0;transition:background .16s,padding-left .16s}
+.landing-navigation button:hover{background:#faf1f5;padding-left:10px}
+.landing-navigation button span:last-child{font-size:20px;flex:0 0 auto}
+.landing-feature{display:flex;flex-direction:column;flex:1 1 0;min-height:0;margin-top:clamp(27px,5.6vh,62px)}
+.landing-feature h2{font-size:clamp(15px,1.38vw,21px);letter-spacing:0;font-weight:700;margin:0 0 10px;color:var(--burgundy)}
+.feature-rule{height:1.5px;width:100%;background:var(--burgundy);flex:0 0 auto}
+.feature-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(29px,4vw,70px);align-items:center;flex:1 1 0;min-height:0;padding:clamp(11px,2vh,23px) clamp(13px,2vw,31px) 0}
+.feature-visual{width:100%;height:min(100%,clamp(160px,31vh,305px));border:0;background:#efe8f4;border-radius:0;overflow:hidden;padding:clamp(12px,2vw,22px);display:grid;place-items:center;transition:filter .18s}
+.feature-visual:hover{filter:brightness(.96)}
+.visual-window{width:min(100%,330px);height:100%;display:flex;flex-direction:column;background:#fff;border:1px solid #e0d9e7;box-shadow:0 9px 26px #35003d27;text-align:left;border-radius:8px;overflow:hidden}
+.visual-top{display:block;border-bottom:1px solid #eee8f0;color:#4c0029;font-size:clamp(11px,1.1vw,15px);font-weight:700;letter-spacing:-.2px;padding:clamp(8px,1.2vh,12px)}
+.visual-dots{font-size:8px;letter-spacing:2px;color:#ccadc8;margin-right:10px}
+.visual-middle{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:17px;padding:12px}
+.visual-circle{display:grid;place-items:center;flex:0 0 clamp(55px,9vh,94px);height:clamp(55px,9vh,94px);border-radius:50%;border:clamp(6px,1.1vh,11px) solid #4b0027;border-top-color:#b08bf4;border-right-color:#ddc9ec;font-weight:800;font-size:clamp(13px,1.7vw,25px);color:#4b0027}
+.visual-lines{display:flex;flex-direction:column;justify-content:center;gap:9px;width:36%}
+.visual-lines i{display:block;width:100%;height:clamp(7px,1vh,11px);border-radius:10px;background:#e7d8ef}
+.visual-lines i:nth-child(2){width:78%;background:#bc9fd3}.visual-lines i:nth-child(3){width:92%;background:#ecdfe8}.visual-lines i:nth-child(4){width:65%;background:#8f5bbb}
+.visual-bottom{border-top:1px solid #ece3ef;display:flex;justify-content:space-around;gap:5px;padding:10px 5px;color:#806a85;font-size:clamp(7px,.66vw,10px);font-weight:700;letter-spacing:.8px}
+.feature-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-width:0}
+.feature-eyebrow{font-size:10px;letter-spacing:1.8px;font-weight:700;color:#894765}
+.feature-copy h3{font-size:clamp(41px,min(4.25vw,6.9vh),66px);line-height:.95;letter-spacing:-1.9px;font-weight:800;color:var(--burgundy);margin:0}
+.feature-copy p{font-size:clamp(13px,1.1vw,17px);line-height:1.55;color:#31232c;margin:0}
+.feature-open{border:0;border-radius:24px;background:#090809;color:#fff;padding:14px 29px;font-size:11px;font-weight:700;margin-top:clamp(7px,1.2vh,15px)}
+.feature-open:hover{background:var(--burgundy)}
+/* Match the new editorial style on existing section screens. */
+#screen-self-service .menu-card,#screen-excellence .menu-card{background:white!important;color:var(--burgundy);border-top:1.5px solid var(--burgundy);border-radius:0;box-shadow:none;padding:clamp(19px,2.4vw,35px) clamp(15px,2vw,28px)}
+#screen-self-service .menu-card:hover,#screen-excellence .menu-card:hover{background:#fbf5f8!important;box-shadow:none;transform:none}
+#screen-self-service .menu-card p,#screen-excellence .menu-card p{color:#6a5d69}
+#screen-self-service .menu-card .go-icon,#screen-excellence .menu-card .go-icon{color:var(--burgundy)}
+#screen-self-service .menu-grid,#screen-excellence .menu-grid{max-height:420px}
+.topbar{border-bottom:1px solid #eee8ee}
+.topbar .nav-trigger{display:none}
+.topbar .year{background:#f4edf3;color:var(--burgundy)}
+#screen-vox .slide,#screen-launches .slide,#screen-priorities .slide{background:#fff}
+@media(max-height:840px) and (min-width:801px){
+  .landing-intro{margin:20px 0 19px}
+  .landing-feature{margin-top:30px}
+  .feature-layout{padding-top:13px}
+  .editorial-landing{padding-top:23px;padding-bottom:12px}
+  .landing-intro h1{font-size:clamp(49px,min(5.4vw,8.7vh),75px)}
+  .feature-visual{height:min(100%,clamp(158px,30vh,250px))}
+  .priority p{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+}
+@media(max-width:900px){
+  .site-links{gap:13px}
+  .site-links button{font-size:10px}
+  .brand-wordmark{font-size:9px}
+}
+@media(max-width:650px){
+  :root{--site-head-h:56px}
+  .site-header{padding:0 16px}
+  .site-links button[data-go]{display:none}
+  .site-links button[data-toggle-nav]{border:1px solid #e7e1e6;border-radius:18px;padding:9px 12px}
+  .site-links button[data-toggle-nav]:after{display:none}
+  .editorial-landing{width:calc(100% - 34px);padding:18px 0 9px}
+  .landing-topline{font-size:9px;padding-bottom:9px;letter-spacing:1px}
+  .landing-topline span:last-child{font-size:8px}
+  .landing-intro{margin:17px 0 12px}
+  .landing-intro h1{font-size:clamp(43px,12vw,63px);letter-spacing:-1.7px}
+  .landing-intro p{font-size:11px;line-height:1.4}
+  .landing-navigation{grid-template-columns:1fr;gap:5px}
+  .landing-navigation button{font-size:10px;padding:7px 3px 9px}
+  .landing-feature{margin-top:14px}
+  .landing-feature h2{font-size:14px;margin-bottom:7px}
+  .feature-layout{grid-template-columns:1fr;gap:12px;align-content:center;justify-items:stretch;padding:8px 0 0}
+  .feature-visual{height:clamp(116px,22vh,174px);padding:9px}
+  .feature-copy{gap:6px}
+  .feature-eyebrow{font-size:9px}
+  .feature-copy h3{font-size:clamp(30px,8vw,43px)}
+  .feature-copy p{font-size:12px}
+  .feature-open{margin-top:3px;padding:11px 18px;font-size:10px}
+}
+@media(max-width:650px) and (max-height:730px){
+  .landing-intro h1{font-size:40px}
+  .landing-feature{margin-top:10px}
+  .feature-visual{height:113px}
+  .feature-copy h3{font-size:29px}
+  .feature-copy p{font-size:11px}
+}
+
 </style>
 </head>
 <body>
+<header class="site-header" id="site-header">
+  <button class="site-brand" type="button" data-go="home" aria-label="Customer Solutions home">
+    <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M6 30V13C6 6 12 3 19 3s13 3 13 10v17M13 30V14c0-4 2-6 6-6s6 2 6 6v16M19 30V14" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></span>
+    <span class="brand-wordmark">MAJID AL FUTTAIM</span>
+  </button>
+  <nav class="site-links" aria-label="Main site navigation">
+    <button type="button" data-go="home">Introduction</button>
+    <button type="button" data-go="self-service">AI &amp; Self-Service</button>
+    <button type="button" data-go="excellence">Performance Excellence</button>
+    <button type="button" data-toggle-nav>Explore all</button>
+  </nav>
+</header>
 <main id="app">
-  <section id="screen-home" class="screen home active" aria-label="Presentation homepage">
-    <div class="home-options">
-      <button type="button" class="home-card" data-go="self-service"><h1>AI &amp;<br>Self-Service</h1><span class="home-arrow" aria-hidden="true">↗</span></button>
-      <button type="button" class="home-card" data-go="excellence"><h1>AI, Automation &amp;<br>Performance Excellence</h1><span class="home-arrow" aria-hidden="true">↗</span></button>
+  <section id="screen-home" class="screen home active" aria-label="Customer Solutions overview">
+  <div class="editorial-landing">
+    <div class="landing-topline"><span>OVERVIEW</span><span>UPDATED 16 NOV 2026</span></div>
+    <div class="landing-intro">
+      <h1>CUSTOMER<br>SOLUTIONS.</h1>
+      <p>AI &amp; SELF-SERVICE. AUTOMATION &amp; PERFORMANCE EXCELLENCE.</p>
     </div>
-  </section>
+    <div class="landing-navigation" aria-label="Explore the two focus areas">
+      <button type="button" data-go="self-service"><span>01 | AI &amp; SELF-SERVICE</span><span aria-hidden="true">→</span></button>
+      <button type="button" data-go="excellence"><span>02 | AI, AUTOMATION &amp; PERFORMANCE EXCELLENCE</span><span aria-hidden="true">→</span></button>
+    </div>
+    <div class="landing-feature">
+      <h2>FEATURED SOLUTION.</h2>
+      <div class="feature-rule"></div>
+      <div class="feature-layout">
+        <button class="feature-visual" type="button" data-go="qa" aria-label="Explore MAFerLens demo">
+          <span class="visual-window"><span class="visual-top"><span class="visual-dots">● ● ●</span> MAFerLens</span>
+            <span class="visual-middle"><span class="visual-circle">QA</span><span class="visual-lines"><i></i><i></i><i></i><i></i></span></span>
+            <span class="visual-bottom"><span>QUALITY</span><span>EVIDENCE</span><span>INSIGHTS</span></span>
+          </span>
+        </button>
+        <div class="feature-copy">
+          <span class="feature-eyebrow">AI · QUALITY ASSURANCE</span>
+          <h3>MAFerLens.</h3>
+          <p>Automated and intelligent QA agent</p>
+          <button type="button" class="feature-open" data-go="qa">OPEN DEMO &nbsp; →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section id="screen-self-service" class="screen" hidden>
+<section id="screen-self-service" class="screen" hidden>
     <header class="topbar"><div class="top-left"><button class="back" data-go="home">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | QUARTER 3 BUSINESS REVIEW</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
     <div class="slide"><h2 class="menu-heading">AI &amp; Self-Service</h2><div class="rule"></div>
       <div class="menu-grid">
@@ -260,6 +401,12 @@
       if(location.hash!=="#"+id){if(replace)history.replaceState(null,"","#"+id);else history.pushState(null,"","#"+id)}
       const titles={home:"Customer Solutions", "self-service":"AI & Self-Service", launches:"Launches so far", vox:"VOX Digital Concierge", priorities:"Upcoming Priorities", excellence:"AI, Automation & Performance Excellence", qa:"MAFerLens", service360:"SHARE Service360"};
       document.title=titles[id];
+      const activeGroup=id==="home"?"home":(["self-service","launches","vox","priorities"].includes(id)?"self-service":"excellence");
+      document.querySelectorAll("#site-header [data-go]").forEach(button=>{
+        const active=button.dataset.go===activeGroup;
+        button.classList.toggle("is-current",active);
+        if(active)button.setAttribute("aria-current","page");else button.removeAttribute("aria-current");
+      });
     };
     if(document.fullscreenElement){document.exitFullscreen().then(apply).catch(apply)}else apply();
   }
