@@ -490,7 +490,7 @@ body.maf-modal-open{overflow:hidden}
 .agentic-status-led{width:7px;height:7px;border-radius:50%;background:#b7a8b2;display:inline-block}
 .agentic-status b{font-size:inherit;color:#685765;white-space:nowrap}
 .agentic-main{flex:1 1 auto;min-height:0;display:grid;
- grid-template-columns:clamp(68px,6.2vw,108px) minmax(0,1fr);
+ grid-template-columns:minmax(0,1fr) clamp(68px,6.2vw,108px);
  gap:clamp(7px,.85vw,16px);align-items:center}
 .agentic-neural{height:auto;min-height:0;display:flex;align-items:center;justify-content:center}
 .agentic-orb{
@@ -548,7 +548,7 @@ body.maf-modal-open{overflow:hidden}
 @media(max-width:979px){
  #page-automation #vox-flow{height:clamp(340px,49vh,390px)}
  #vox-agentic-workbench{padding:9px;gap:7px}
- .agentic-main{grid-template-columns:clamp(57px,6vw,77px) minmax(0,1fr);gap:7px}
+ .agentic-main{grid-template-columns:minmax(0,1fr) clamp(57px,6vw,77px);gap:7px}
  .agentic-op{font-size:10px;gap:4px}
 }
 @media(max-width:760px){
@@ -558,7 +558,7 @@ body.maf-modal-open{overflow:hidden}
  #vox-agentic-workbench{padding:5px;gap:4px}
  .agentic-status{font-size:7px;letter-spacing:0}
  .agentic-status-led{width:5px;height:5px}
- .agentic-main{grid-template-columns:clamp(32px,6vw,49px) minmax(0,1fr);gap:3px}
+ .agentic-main{grid-template-columns:minmax(0,1fr) clamp(32px,6vw,49px);gap:3px}
  .agentic-orb{box-shadow:0 3px 7px #56052b2b,0 0 0 2px #f5e7f0}
  .agentic-orb:before{inset:-3px;border-width:1px}
  .agentic-orb:after{inset:4px}
@@ -596,13 +596,13 @@ body.maf-modal-open{overflow:hidden}
 <div class="agentic-workbench" id="vox-agentic-workbench" aria-label="Animated email processing analysis">
  <div class="agentic-status"><span class="agentic-status-label"><i class="agentic-status-led"></i> AGENTIC PROCESSOR</span><b id="agentic-step-indicator">READY</b></div>
  <div class="agentic-main">
-  <div class="agentic-neural" aria-hidden="true"><div class="agentic-orb"><strong>AI</strong></div></div>
   <div class="agentic-ops">
    <div class="agentic-op" data-agentic-op="0"><span class="agentic-op-status">○</span><span>Read customer email</span></div>
    <div class="agentic-op" data-agentic-op="1"><span class="agentic-op-status">○</span><span>Understand intent</span></div>
    <div class="agentic-op" data-agentic-op="2"><span class="agentic-op-status">○</span><span>Identify entities</span></div>
    <div class="agentic-op" data-agentic-op="3"><span class="agentic-op-status">○</span><span>Prepare CRM handoff</span></div>
   </div>
+  <div class="agentic-neural" aria-hidden="true"><div class="agentic-orb"><strong>AI</strong></div></div>
  </div>
  <div class="agentic-progress"><div class="agentic-phase"><strong id="agentic-phase">READY TO PROCESS</strong><span id="agentic-percent">00%</span></div><div class="agentic-meter" aria-hidden="true"><span id="agentic-progress-bar"></span></div></div>
 </div><p>Agentic intelligence reads, understands and routes each request</p></div><div class="flowarrow">→</div><div class="flowblock" data-flow-stage="2"><small>03 / TAGGING</small><strong>Ticket categorisation</strong><div class="tagitem" data-flow-item="2">◆ Refund</div><div class="tagitem" data-flow-item="2">◇ Booking</div><div class="tagitem" data-flow-item="2">◇ Voucher</div><div class="tagitem" data-flow-item="2">◇ Complaint</div><p>Apply the correct ticket categories</p></div><div class="flowarrow">→</div><div class="flowblock" data-flow-stage="3"><small>04 / CREATION</small><strong>Structured tickets</strong><div class="ticketitem" data-flow-item="3">▤ Refund · Created</div><div class="ticketitem" data-flow-item="3">▤ Booking · Created</div><div class="ticketitem" data-flow-item="3">▤ Voucher · Created</div><p>Tickets created automatically in OneView CRM</p></div><div class="flowarrow">→</div><div class="flowblock" data-flow-stage="4"><small>05 / RESPONSE</small><strong>Structured responses</strong><div class="response-options" aria-label="Two response handling paths"><div class="response-option" data-response-mode="automatic"><span class="response-symbol" aria-hidden="true">✦</span><div class="response-copy"><b>Automated</b><small>AI response for simple use cases</small></div></div><span class="response-or">OR</span><div class="response-option" data-response-mode="empower"><span class="response-symbol" aria-hidden="true">✎</span><div class="response-copy"><b>Empower the agent</b><small>Ready for the human agent to review and send <em>(complex use cases)</em></small></div></div></div><p>Choose the right response path for each case</p></div></div><div class="benefitbar"><span>⚡ Faster handling</span><span>◇ Consistent classification</span><span>↻ Reduced manual processing</span></div><div class="tourbottom" id="vox-steps"><div class="step">Emails</div><div class="step">AI engine</div><div class="step">Categorise</div><div class="step">Create tickets</div><div class="step">Respond</div></div><div class="walknotice">Simulated journey. No live emails or CRM tickets are processed.</div></div></div></section>
