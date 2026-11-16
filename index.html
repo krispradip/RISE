@@ -336,7 +336,7 @@
     const button=e.target.closest("button");
     if(button?.hasAttribute("data-toggle-nav")){openNav();return}
     if(button?.hasAttribute("data-close-nav")||e.target===navCover){closeNav();return}
-    if(button?.closest("#explore-panel")?.dataset.go){closeNav();return}
+    if(button?.dataset.go && button.closest("#explore-panel")){closeNav();return}
     if(button?.hasAttribute("data-close-info")||e.target===infoCover){closeInfo();return}
     if(button?.hasAttribute("data-info-prev")){updateInfo(-1);return}
     if(button?.hasAttribute("data-info-next")){updateInfo(1);return}
