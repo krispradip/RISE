@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#ffffff">
-<title>RISE | Customer Solutions</title>
+<title>Customer Solutions</title>
 <style>
   :root { color-scheme:light; --ink:#1f2937; --muted:#64748b; --line:#e2e8f0; --bg:#ffffff; --blue:#2563eb; }
   *,*::before,*::after { box-sizing:border-box; }
@@ -96,21 +96,6 @@
   }
   @media (prefers-reduced-motion:reduce) { .choice { transition:none; } }
 
-  /* Remote demo launcher — no blank iframe as the only visible action. */
-  .embed iframe:not([src]) { display:none; }
-  .embed-launch { position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;padding:26px;background:#fff; }
-  .embed-launch-content { text-align:center;max-width:560px;width:100%; }
-  .embed-launch h2 { font-size:clamp(28px,3vw,42px);margin:0 0 30px;letter-spacing:-.8px; }
-  .launch-buttons { display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px; }
-  .launch-buttons button,.launch-buttons a { min-height:46px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;padding:12px 22px;font-weight:700;font-size:14px;text-decoration:none; }
-  .launch-primary,.live-button { background:#2563eb!important;color:#fff!important;border:1px solid #2563eb!important; }
-  .launch-secondary { background:#fff;color:#1d2939;border:1px solid #cad5e2; }
-  .embed-launch p { color:#667085;line-height:1.6;font-size:12px;margin:22px 0 0; }
-  .embed-rescue { position:absolute;z-index:4;bottom:14px;right:14px;left:auto;background:rgba(255,255,255,.97);color:#344054;border:1px solid #d9e1e9;border-radius:10px;padding:9px 12px;display:flex;gap:12px;align-items:center;box-shadow:0 5px 20px #1112;font-size:12px; }
-  .embed-rescue[hidden],.embed-launch[hidden] { display:none!important; }
-  .embed-rescue a { color:#1d4ed8;font-weight:700;text-decoration:none; }
-  .embed-rescue button { font-size:12px;padding:6px 8px;border:1px solid #d9e1e9;border-radius:6px;background:white;color:#344054; }
-  @media(max-width:720px){.embed-rescue{right:7px;bottom:7px;left:7px;justify-content:center;gap:8px;flex-wrap:wrap;font-size:11px}.embed-launch h2{margin-bottom:22px}.launch-buttons{flex-direction:column}.launch-buttons button,.launch-buttons a{width:100%;max-width:300px}.demo-bar .bar-name{font-size:12px}.demo-actions .small-button{font-size:10px}}
 </style>
 </head>
 <body>
@@ -168,26 +153,10 @@
       <span class="bar-name">QA.MAFer.AI</span>
       <div class="demo-actions">
         <button type="button" class="small-button" data-reload="qa">Reload</button>
-        <a id="external-qa" class="small-button live-button" href="https://expert-adventure-7z351g7.pages.github.io/" target="_blank" rel="noopener noreferrer">Open live app ↗</a>
         <button type="button" class="small-button" data-expand="qa">Expand</button>
       </div>
     </header>
     <div id="embed-qa" class="embed">
-      <div class="embed-launch" id="launch-qa">
-  <div class="embed-launch-content">
-    <h2>QA.MAFer.AI</h2>
-    <div class="launch-buttons">
-      <button type="button" class="launch-primary" data-try-embed="qa">Try inside RISE</button>
-      <a class="launch-secondary" href="https://expert-adventure-7z351g7.pages.github.io/" target="_blank" rel="noopener noreferrer">Open live application ↗</a>
-    </div>
-    <p>Some sites do not allow embedding. Use the live application link if it does not appear here.</p>
-  </div>
-</div>
-<div class="embed-rescue" id="rescue-qa" hidden>
-  <span>Blank or blocked?</span>
-  <a href="https://expert-adventure-7z351g7.pages.github.io/" target="_blank" rel="noopener noreferrer">Open live application ↗</a>
-  <button type="button" data-show-launch="qa">Launch options</button>
-</div>
       <iframe id="frame-qa" title="QA.MAFer.AI live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
     </div>
   </section>
@@ -198,26 +167,10 @@
       <span class="bar-name">SHARE Service360</span>
       <div class="demo-actions">
         <button type="button" class="small-button" data-reload="service360">Reload</button>
-        <a id="external-service360" class="small-button live-button" href="https://expert-adventure-7z351g7.pages.github.io/share-service360/" target="_blank" rel="noopener noreferrer">Open live app ↗</a>
         <button type="button" class="small-button" data-expand="service360">Expand</button>
       </div>
     </header>
     <div id="embed-service360" class="embed">
-      <div class="embed-launch" id="launch-service360">
-  <div class="embed-launch-content">
-    <h2>SHARE Service360</h2>
-    <div class="launch-buttons">
-      <button type="button" class="launch-primary" data-try-embed="service360">Try inside RISE</button>
-      <a class="launch-secondary" href="https://expert-adventure-7z351g7.pages.github.io/share-service360/" target="_blank" rel="noopener noreferrer">Open live application ↗</a>
-    </div>
-    <p>Some sites do not allow embedding. Use the live application link if it does not appear here.</p>
-  </div>
-</div>
-<div class="embed-rescue" id="rescue-service360" hidden>
-  <span>Blank or blocked?</span>
-  <a href="https://expert-adventure-7z351g7.pages.github.io/share-service360/" target="_blank" rel="noopener noreferrer">Open live application ↗</a>
-  <button type="button" data-show-launch="service360">Launch options</button>
-</div>
       <iframe id="frame-service360" title="SHARE Service360 live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
     </div>
   </section>
@@ -225,67 +178,65 @@
 <script>
 (() => {
   "use strict";
-  const sources = {
+  const sources = Object.freeze({
     qa: "https://expert-adventure-7z351g7.pages.github.io/",
-    service360: "https://expert-adventure-7z351g7.pages.github.io/share-service360/"
-  };
-  const names = new Set(["home","self-service","excellence","qa","service360"]);
-  const framesLoaded = new Set();
-  let current = "home";
+    service360: "https://sharelens.kris-pradip.workers.dev/"
+  });
+  const screens = ["home", "self-service", "excellence", "qa", "service360"];
+  const loaded = new Set();
   const get = id => document.getElementById(id);
-  function show(requested, replace=false) {
-    const id=names.has(requested)?requested:"home";
-    current=id;
-    for (const name of names) {
-      const screen=get("screen-"+name);
-      const visible=name===id;
-      screen.hidden=!visible;
-      screen.classList.toggle("active",visible);
+  let current = "home";
+
+  function show(name, replace=false) {
+    const id = screens.includes(name) ? name : "home";
+    current = id;
+    for (const screenName of screens) {
+      const screen = get("screen-" + screenName);
+      const active = screenName === id;
+      screen.hidden = !active;
+      screen.classList.toggle("active", active);
     }
-    // Remote apps load only when the presenter selects Try inside RISE.
-    // External sites may block cross-origin iframes; keep an obvious direct launch.
-    if (location.hash!=="#"+id) {
-      if (replace) history.replaceState(null,"","#"+id);
-      else history.pushState(null,"","#"+id);
+    // Load each actual application directly in its full-height page.
+    // Keep a loaded iframe mounted when switching screens to preserve demo state.
+    if ((id === "qa" || id === "service360") && !loaded.has(id)) {
+      get("frame-" + id).src = sources[id];
+      loaded.add(id);
     }
-    document.title="RISE | "+(id==="home"?"Customer Solutions":id==="self-service"?"AI & Self-Service":id==="excellence"?"AI, Automation & Performance Excellence":id==="qa"?"QA.MAFer.AI":"SHARE Service360");
+    if (location.hash !== "#" + id) {
+      if (replace) history.replaceState(null, "", "#" + id);
+      else history.pushState(null, "", "#" + id);
+    }
+    document.title = id === "home" ? "Customer Solutions" :
+      id === "self-service" ? "AI & Self-Service" :
+      id === "excellence" ? "AI, Automation & Performance Excellence" :
+      id === "qa" ? "QA.MAFer.AI" : "SHARE Service360";
   }
+
   document.addEventListener("click", e => {
-    const button=e.target.closest("button");
+    const button = e.target.closest("button");
     if (!button) return;
-    if (button.dataset.go) { show(button.dataset.go);return; }
-    if (button.dataset.tryEmbed || button.dataset.reload) {
-      const id=button.dataset.tryEmbed || button.dataset.reload;
-      get("launch-"+id).hidden=true;
-      get("rescue-"+id).hidden=false;
-      const frame=get("frame-"+id);
-      frame.style.display="block";
-      frame.src=sources[id];
-      framesLoaded.add(id);
-      return;
-    }
-    if (button.dataset.showLaunch) {
-      const id=button.dataset.showLaunch;
-      get("frame-"+id).removeAttribute("src");
-      get("frame-"+id).style.display="none";
-      get("launch-"+id).hidden=false;
-      get("rescue-"+id).hidden=true;
-      framesLoaded.delete(id);
-      return;
-    }
-    if (button.dataset.expand) {
-      const box=get("embed-"+button.dataset.expand);
+    if (button.dataset.go) {
+      show(button.dataset.go);
+    } else if (button.dataset.reload && sources[button.dataset.reload]) {
+      const id = button.dataset.reload;
+      get("frame-" + id).src = sources[id];
+      loaded.add(id);
+    } else if (button.dataset.expand) {
+      const panel = get("embed-" + button.dataset.expand);
       try {
         if (document.fullscreenElement) document.exitFullscreen();
-        else if (box.requestFullscreen) box.requestFullscreen();
-      } catch (err) { console.warn("Fullscreen unavailable",err); }
+        else if (panel.requestFullscreen) panel.requestFullscreen();
+      } catch (error) { console.warn("Fullscreen unavailable", error); }
     }
   });
-  window.addEventListener("popstate",()=>show(location.hash.slice(1),true));
-  document.addEventListener("keydown",e=>{
-    if (e.key==="Escape" && !document.fullscreenElement && current!=="home") show(current==="qa"||current==="service360"?"excellence":"home");
+
+  window.addEventListener("popstate", () => show(location.hash.slice(1), true));
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && !document.fullscreenElement && current !== "home") {
+      show(current === "qa" || current === "service360" ? "excellence" : "home");
+    }
   });
-  show(location.hash.slice(1)||"home",true);
+  show(location.hash.slice(1) || "home", true);
 })();
 </script>
 </body>
