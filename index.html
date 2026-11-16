@@ -103,6 +103,9 @@
 }
 @media(max-width:500px) and (max-height:650px){.menu-card h3{font-size:17px}.menu-heading{font-size:29px}.priority p{font-size:8px}.priority h3{font-size:13px}.vox-captions span{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.home-card,.menu-card{transition:none}}
+
+/* Only two product cards are needed on the Performance Excellence screen. */
+@media(min-width:801px){#screen-excellence .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1150px;width:100%;align-self:center}}
 </style>
 </head>
 <body>
@@ -169,30 +172,8 @@
       <div class="menu-grid">
         <button class="menu-card" data-go="qa"><h3>MAFerLens</h3><p>Automated and intelligent QA agent</p><span class="go-icon">↗</span></button>
         <button class="menu-card" data-go="service360"><h3>SHARE Service360</h3><p>All in one SHARE Ambassador Platform</p><span class="go-icon">↗</span></button>
-        <button class="menu-card" data-go="marketing"><h3>AI Marketing Platform</h3><p>From strategy to measurement</p><span class="go-icon">↗</span></button>
       </div>
       <div class="footer"><span>INTELLECTUAL CAPITAL | CUSTOMER CARE SOLUTIONS</span><span></span></div>
-    </div>
-  </section>
-
-  <section id="screen-marketing" class="screen" hidden>
-    <header class="topbar"><div class="top-left"><button class="back" data-go="excellence">← Back</button><span class="eyebrow">INTELLECTUAL CAPITAL</span></div><span class="year">2026</span></header>
-    <div class="slide">
-      <div class="marketing-top"><span class="marketing-label">INTELLECTUAL CAPITAL</span><span class="marketing-pill">MARKETING PLATFORM</span></div>
-      <h2 class="marketing-heading">FROM STRATEGY TO MEASUREMENT; EVERY STAGE OF PROCESS IS TO BE JOINED UP AND AI POWERED ON ONE PLATFORM.</h2>
-      <div class="marketing-stages">
-        <article class="marketing-stage"><div class="stage-art"><svg viewBox="0 0 90 90"><circle cx="45" cy="24" r="14"/><path d="M20 75c0-17 11-27 25-27s25 10 25 27M10 23h10M70 23h10M45 2v7M17 5l10 10M73 5 63 15"/></svg></div><span class="stage-index">01</span><h3>Customer 360</h3><p>AI Customer 360</p></article>
-        <article class="marketing-stage"><div class="stage-art"><svg viewBox="0 0 90 90"><rect x="8" y="15" width="42" height="55" rx="4"/><path d="M18 30h22M18 40h14M18 50h17"/><circle cx="59" cy="47" r="19"/><path d="m74 62 12 12"/></svg></div><span class="stage-index">02</span><h3>Research<br>&amp; Insights</h3><p>AI Research</p></article>
-        <article class="marketing-stage"><div class="stage-art"><svg viewBox="0 0 90 90"><path d="M45 10v58M45 24 16 61M45 24 74 61"/><path d="M10 60Q45 5 80 60Z"/><path d="M25 26q20-10 40 0"/><circle cx="45" cy="69" r="6"/></svg></div><span class="stage-index">03</span><h3>Creative<br>&amp; Media</h3><p>AI Creative Suite</p></article>
-        <article class="marketing-stage"><div class="stage-art"><svg viewBox="0 0 90 90"><rect x="27" y="5" width="38" height="80" rx="8"/><path d="M38 14h16M35 71h22"/><path d="m10 41 8 8 16-21"/><circle cx="46" cy="43" r="9"/></svg></div><span class="stage-index">04</span><h3>Personalization<br>&amp; Automation</h3><p>Personalization Engine</p></article>
-        <article class="marketing-stage"><div class="stage-art"><svg viewBox="0 0 90 90"><path d="M12 75V15M12 75h70"/><path d="m20 60 15-19 13 9 14-28 18 4"/><circle cx="20" cy="60" r="3"/><circle cx="35" cy="41" r="3"/><circle cx="48" cy="50" r="3"/><circle cx="62" cy="22" r="3"/><circle cx="80" cy="26" r="3"/></svg></div><span class="stage-index">05</span><h3>Performance<br>&amp; Measurement</h3><p>AI Performance</p></article>
-      </div>
-      <div class="metrics">
-        <div><div class="metric-number">11%</div><div class="metric-label">SALES UPLIFT BY 2030</div><div class="metric-pill">11% in ’30 vs 3% in ’26 · 4.2×</div></div>
-        <div><div class="metric-number">10×</div><div class="metric-label">FASTER, END TO END</div><div class="metric-pill">~3 hours vs 3–4 marketer-days</div></div>
-        <div><div class="metric-number">5</div><div class="metric-label">CONNECTED WORLDS LIVE BY 2027 END</div><div class="metric-pill">3 live in 2026 · 2 more in 2027</div></div>
-      </div>
-      <div class="footer"><span>CUSTOMER SOLUTIONS | QUARTER TWO BUSINESS REVIEW 2026</span><span></span></div>
     </div>
   </section>
 
@@ -209,7 +190,7 @@
 (() => {
   "use strict";
   const sources = Object.freeze({qa:"https://expert-adventure-7z351g7.pages.github.io/",service360:"https://expert-adventure-7z351g7.pages.github.io/share-service360/"});
-  const ids = ["home","self-service","launches","vox","priorities","excellence","marketing","qa","service360"];
+  const ids = ["home","self-service","launches","vox","priorities","excellence","qa","service360"];
   const loaded = new Set();
   const get = id => document.getElementById(id);
   let current = "home";
@@ -220,7 +201,7 @@
       for(const item of ids){const el=get("screen-"+item);const active=item===id;el.hidden=!active;el.classList.toggle("active",active)}
       if((id==="qa"||id==="service360")&&!loaded.has(id)){get("frame-"+id).src=sources[id];loaded.add(id)}
       if(location.hash!=="#"+id){if(replace)history.replaceState(null,"","#"+id);else history.pushState(null,"","#"+id)}
-      const titles={home:"Customer Solutions", "self-service":"AI & Self-Service", launches:"Launches so far", vox:"VOX Digital Concierge", priorities:"Upcoming Priorities", excellence:"AI, Automation & Performance Excellence", marketing:"AI Marketing Platform", qa:"MAFerLens", service360:"SHARE Service360"};
+      const titles={home:"Customer Solutions", "self-service":"AI & Self-Service", launches:"Launches so far", vox:"VOX Digital Concierge", priorities:"Upcoming Priorities", excellence:"AI, Automation & Performance Excellence", qa:"MAFerLens", service360:"SHARE Service360"};
       document.title=titles[id];
     };
     if(document.fullscreenElement){document.exitFullscreen().then(apply).catch(apply)}else apply();
@@ -237,7 +218,7 @@
   window.addEventListener("popstate",()=>show(location.hash.slice(1),true));
   document.addEventListener("keydown",e=>{
     if(e.key!=="Escape"||document.fullscreenElement||current==="home")return;
-    const parent={"self-service":"home","launches":"self-service","vox":"self-service","priorities":"self-service","excellence":"home","marketing":"excellence","qa":"excellence","service360":"excellence"};
+    const parent={"self-service":"home","launches":"self-service","vox":"self-service","priorities":"self-service","excellence":"home","qa":"excellence","service360":"excellence"};
     show(parent[current]||"home");
   });
   show(location.hash.slice(1)||"home",true);
