@@ -315,13 +315,17 @@
  .qa-story{gap:10px}.qa-story-main h3{font-size:24px}.qa-story-main p{font-size:11px}.qa-handoff{padding:17px}.qa-handoff h3{font-size:24px}.qa-handoff button{padding:10px 13px;font-size:10px}
 }
 
+
+/* Real bilingual company wordmark, sourced from the provided design reference. */
+.site-brand .official-logo{display:block;width:126px;height:32px;max-width:100%;object-fit:contain;object-position:left center}
+.site-brand{min-width:126px}
+@media(max-width:650px){.site-brand .official-logo{width:116px;height:auto}.site-brand{min-width:116px}}
 </style>
 </head>
 <body>
 <header class="site-header" id="site-header">
   <button class="site-brand" type="button" data-go="home" aria-label="Customer Solutions home">
-    <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 38 38" fill="none"><path d="M6 30V13C6 6 12 3 19 3s13 3 13 10v17M13 30V14c0-4 2-6 6-6s6 2 6 6v16M19 30V14" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg></span>
-    <span class="brand-wordmark">MAJID AL FUTTAIM</span>
+    <img class="official-logo" src="data:image/webp;base64,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" alt="Majid Al Futtaim" width="126" height="32">
   </button>
   <nav class="site-links" aria-label="Main site navigation">
     <button type="button" data-go="home">Introduction</button>
