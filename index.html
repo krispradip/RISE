@@ -52,6 +52,7 @@
     box-shadow:0 4px 18px rgba(15,23,42,.035); }
   .product:hover { border-color:#afc2d9;background:#fcfdff; }
   .product-name { font-size:clamp(23px,2.5vw,34px);font-weight:700;letter-spacing:-.5px; }
+  .product-description { display:block; margin:10px 0 auto; font-size:clamp(13px,1.25vw,17px); line-height:1.45; color:#64748b; font-weight:400; }
   .product-launch { display:flex;align-items:center;gap:12px;color:#2563eb;font-size:14px;font-weight:600; }
 
   /* The presentation container NEVER scrolls. Remote apps may scroll inside the frame. */
@@ -140,28 +141,30 @@
       <h1 class="section-title">AI, Automation &amp; Performance Excellence</h1>
       <div class="product-grid">
         <button type="button" class="product" data-go="qa">
-          <span class="product-name">QA.MAFer.AI</span>
+          <span class="product-name">MAFerLens</span>
+          <span class="product-description">Automated and intelligent QA agent</span>
           <span class="product-launch">Launch application <span aria-hidden="true">→</span></span>
         </button>
         <button type="button" class="product" data-go="service360">
           <span class="product-name">SHARE Service360</span>
+          <span class="product-description">All in one SHARE Ambassador Platform</span>
           <span class="product-launch">Launch application <span aria-hidden="true">→</span></span>
         </button>
       </div>
     </div>
   </section>
 
-  <section id="screen-qa" class="screen" hidden aria-label="QA.MAFer.AI demo">
+  <section id="screen-qa" class="screen" hidden aria-label="MAFerLens demo">
     <header class="demo-bar">
       <button type="button" class="back" data-go="excellence">← Back</button>
-      <span class="bar-name">QA.MAFer.AI</span>
+      <span class="bar-name">MAFerLens</span>
       <div class="demo-actions">
         <button type="button" class="small-button" data-reload="qa">Reload</button>
         <button type="button" class="small-button" data-expand="qa">Expand</button>
       </div>
     </header>
     <div id="embed-qa" class="embed">
-      <iframe id="frame-qa" title="QA.MAFer.AI live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
+      <iframe id="frame-qa" title="MAFerLens live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
     </div>
   </section>
 
@@ -213,7 +216,7 @@
     document.title = id === "home" ? "Customer Solutions" :
       id === "self-service" ? "AI & Self-Service" :
       id === "excellence" ? "AI, Automation & Performance Excellence" :
-      id === "qa" ? "QA.MAFer.AI" : "SHARE Service360";
+      id === "qa" ? "MAFerLens" : "SHARE Service360";
   }
 
   document.addEventListener("click", e => {
