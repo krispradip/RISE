@@ -291,6 +291,8 @@ main{height:calc(100vh - var(--height));height:calc(100dvh - var(--height));over
 @media(max-width:760px){#page-selfservice .maf-v2:has(#maf-live.active) .maf-v2-tabs{min-height:34px}}
 
 /* 2026-11-16: VOX final response choices & aligned five-stage progress rail */
+.maf-slide-selection[hidden]{display:none!important}
+
 #vox-flow, #vox-steps{
   --vox-stage-grid:minmax(0,1fr) 29px minmax(0,1.05fr) 29px minmax(0,1.05fr) 29px minmax(0,1.05fr) 29px minmax(0,.9fr);
   grid-template-columns:var(--vox-stage-grid);
