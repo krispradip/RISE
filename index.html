@@ -1,173 +1,237 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090d1b">
-  <meta name="description" content="RISE — an interactive exploration of AI, self-service and performance excellence.">
-  <title>RISE | Customer Solutions</title>
-  <link rel="stylesheet" href="./styles.css?v=desktop-stage-20261116-2">
-  <script src="./app.js?v=mobile-fix-20261116-1" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>RISE | Customer Solutions</title>
+<style>
+  :root { color-scheme:light; --ink:#1f2937; --muted:#64748b; --line:#e2e8f0; --bg:#ffffff; --blue:#2563eb; }
+  *,*::before,*::after { box-sizing:border-box; }
+  html,body { margin:0; width:100%; height:100%; overflow:hidden; overscroll-behavior:none; }
+  body { font-family:Arial,"Helvetica Neue",Helvetica,sans-serif; background:var(--bg); color:var(--ink); }
+  button,a { font:inherit; -webkit-tap-highlight-color:transparent; }
+  button { cursor:pointer; }
+  button:focus-visible,a:focus-visible { outline:3px solid #2563eb;outline-offset:4px; }
+  main { width:100%; height:100vh;height:100dvh;overflow:hidden;position:relative; }
+  .screen { display:none; width:100%; height:100%; overflow:hidden; }
+  .screen.active { display:flex;flex-direction:column; }
+  [hidden] { display:none!important; }
+
+  /* Homepage: exactly two choices and nothing else. */
+  .home { align-items:center;justify-content:center;padding:clamp(22px,4vw,64px); }
+  .choices { display:grid;grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,2.2vw,28px);width:100%;max-width:1100px; }
+  .choice { appearance:none;background:white;border:1px solid #dfe5ed;border-radius:18px;
+    min-width:0;min-height:clamp(210px,35vh,320px);padding:clamp(22px,3.5vw,48px);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+    color:#1d2939;text-align:center;box-shadow:0 6px 24px rgba(15,23,42,.045);
+    transition:border-color .16s,box-shadow .16s,transform .16s; }
+  .choice:hover { border-color:#b6c7dc;box-shadow:0 12px 32px rgba(15,23,42,.09);transform:translateY(-3px); }
+  .choice:active { transform:translateY(0); }
+  .choice-icon { width:78px;height:78px;display:grid;place-items:center;border-radius:20px; }
+  .choice-icon svg { width:43px;height:43px;fill:none;stroke:currentColor;stroke-width:1.8;
+    stroke-linejoin:round;stroke-linecap:round; }
+  .choice-one .choice-icon { color:#2563eb;background:#edf4ff; }
+  .choice-two .choice-icon { color:#0f766e;background:#eaf8f5; }
+  .choice-title { display:block;font-size:clamp(22px,2.25vw,31px);font-weight:700;line-height:1.28;letter-spacing:-.5px;max-width:430px; }
+
+  /* Interior screens have simple headings and back navigation, no decorative copy. */
+  .bar { flex:0 0 72px;min-height:0;display:flex;align-items:center;gap:20px;
+    padding:0 clamp(22px,3vw,48px);border-bottom:1px solid var(--line); }
+  .back { border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px;
+    color:#344054;font-weight:600;font-size:13px;flex:0 0 auto; }
+  .back:hover,.small-button:hover { background:#f8fafc; }
+  .bar-name { font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+  .content { width:100%;flex:1 1 0;min-height:0;overflow:hidden;padding:clamp(28px,4vw,64px);
+    display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start; }
+  .section-title { font-size:clamp(32px,4vw,57px);letter-spacing:-1.5px;line-height:1.12;margin:0 0 35px;max-width:940px; }
+  .product-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;width:100%;max-width:1100px; }
+  .product { min-width:0;min-height:225px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:30px;text-align:left;display:flex;flex-direction:column;
+    align-items:flex-start;justify-content:space-between;color:var(--ink);
+    box-shadow:0 4px 18px rgba(15,23,42,.035); }
+  .product:hover { border-color:#afc2d9;background:#fcfdff; }
+  .product-name { font-size:clamp(23px,2.5vw,34px);font-weight:700;letter-spacing:-.5px; }
+  .product-launch { display:flex;align-items:center;gap:12px;color:#2563eb;font-size:14px;font-weight:600; }
+
+  /* The presentation container NEVER scrolls. Remote apps may scroll inside the frame. */
+  .demo-bar { flex:0 0 72px;min-height:0;display:flex;align-items:center;gap:16px;
+    padding:0 clamp(16px,2.2vw,34px);border-bottom:1px solid var(--line); }
+  .demo-bar .bar-name { flex:1; }
+  .demo-actions { display:flex;gap:8px;align-items:center; }
+  .small-button { text-decoration:none;display:inline-flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);background:#fff;color:#344054;padding:10px 13px;
+    border-radius:9px;font-size:13px;font-weight:600;white-space:nowrap; }
+  .embed { flex:1 1 0;min-height:0;width:100%;overflow:hidden;position:relative;background:#f8fafc; }
+  .embed iframe { border:0;width:100%;height:100%;display:block;background:white; }
+  .embed:fullscreen { background:#fff; }
+  .embed:fullscreen iframe { width:100%;height:100%; }
+
+  /* Still scroll-free at smaller widths. */
+  @media (max-width:720px) {
+    .home { padding:20px; }
+    .choices { grid-template-columns:minmax(0,1fr);gap:16px;max-width:440px; }
+    .choice { min-height:clamp(145px,27dvh,215px);gap:14px;padding:17px; }
+    .choice-icon { width:54px;height:54px;border-radius:13px; }
+    .choice-icon svg { width:30px;height:30px; }
+    .choice-title { font-size:clamp(19px,5vw,26px); }
+    .bar,.demo-bar { flex-basis:64px;padding:0 15px;gap:8px; }
+    .bar-name { font-size:14px; }
+    .back { padding:10px; }
+    .content { padding:25px 20px; }
+    .section-title { font-size:clamp(27px,7vw,38px);margin-bottom:23px; }
+    .product-grid { grid-template-columns:minmax(0,1fr);gap:14px; }
+    .product { min-height:clamp(132px,24dvh,180px);padding:20px; }
+    .product-name { font-size:23px; }
+    .demo-actions { gap:5px; }
+    .small-button { font-size:11px;padding:9px 8px; }
+  }
+  @media (max-height:520px) and (min-width:721px) {
+    .choice { min-height:175px;gap:14px; }
+    .choice-icon { width:60px;height:60px; }
+    .choice-icon svg { width:34px;height:34px; }
+    .content { padding:22px 40px; }
+    .section-title { font-size:32px;margin-bottom:18px; }
+    .product { min-height:170px; }
+  }
+  @media (prefers-reduced-motion:reduce) { .choice { transition:none; } }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="atmosphere" aria-hidden="true"><div class="glow glow-one"></div><div class="glow glow-two"></div><div class="grid-haze"></div></div>
-<header class="topbar">
-  <button class="brand" type="button" data-go="home" aria-label="RISE — go home"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-name">RISE<span class="brand-dot">.</span></span></button>
-  <nav class="topnav" aria-label="Presentation themes">
-    <button type="button" data-go="theme1">01 &nbsp; AI & Self-Service</button>
-    <button type="button" data-go="theme2">02 &nbsp; AI, Automation & Performance</button>
-    <button type="button" data-go="demo-qa">QA.MAFer.AI ↗</button>
-    <button type="button" data-go="demo-service360">SHARE Service360 ↗</button>
-  </nav>
-  <div class="header-actions">
-    <span class="event-date">23 NOV 2026 <span class="tiny-spark">✦</span> CUSTOMER SOLUTIONS</span>
-    <button class="icon-button" type="button" id="jump-open" title="Choose a section" aria-label="Choose a section">⌘</button>
-    <button class="icon-button" type="button" id="fullscreen" title="Toggle fullscreen" aria-label="Toggle fullscreen">⛶</button>
-  </div>
-</header>
-<main id="main" tabindex="-1">
-  <section class="view is-active" id="view-home" data-view="home" aria-labelledby="home-title">
-    <div class="rise-home-grid">
-      <div class="rise-home-hero">
-        <div class="eyebrow"><span class="eyebrow-line"></span> CUSTOMER SOLUTIONS · 23 NOVEMBER 2026</div>
-        <h1 id="home-title" class="hero-title">Together,<br>we <span class="rise-word">RISE<svg viewBox="0 0 326 32" preserveAspectRatio="none" aria-hidden="true"><path d="M3 19 C65 8 132 11 188 16 S279 19 323 4" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/></svg></span></h1>
-        <p class="hero-description">From smarter customer self-service to intelligent, high-performing operations. Two themes. One connected story.</p>
-        <div class="hero-cta"><button type="button" class="button button-primary" data-go="theme1">Start the experience <span aria-hidden="true">↗</span></button><button type="button" class="button button-quiet" data-go="theme2">Explore live demos <span aria-hidden="true">→</span></button></div>
-        <div class="hero-foot"><span class="pulse-dot"></span> SIMPLIFY <span class="foot-sep">/</span> AUTOMATE <span class="foot-sep">/</span> ELEVATE</div>
+<main>
+  <section id="screen-home" class="screen home active" aria-label="Presentation home">
+    <div class="choices">
+      <button type="button" class="choice choice-one" data-go="self-service">
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 11h32v23H24l-9 7v-7H8z"/><path d="M16 20h16M16 26h10"/><path d="m33 7 1.3 3.7L38 12l-3.7 1.3L33 17l-1.3-3.7L28 12l3.7-1.3z"/></svg>
+        </span>
+        <span class="choice-title">AI &amp; Self-Service</span>
+      </button>
+      <button type="button" class="choice choice-two" data-go="excellence">
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M8 38V11M8 38h32"/><path d="m15 30 8-9 7 5 10-14"/><path d="M34 12h6v6"/><circle cx="15" cy="30" r="2"/><circle cx="23" cy="21" r="2"/><circle cx="30" cy="26" r="2"/></svg>
+        </span>
+        <span class="choice-title">AI, Automation &amp;<br>Performance Excellence</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="screen-self-service" class="screen" hidden aria-label="AI and Self-Service">
+    <header class="bar">
+      <button type="button" class="back" data-go="home">← Back</button>
+      <span class="bar-name">AI &amp; Self-Service</span>
+    </header>
+    <div class="content">
+      <h1 class="section-title">Launches so far</h1>
+    </div>
+  </section>
+
+  <section id="screen-excellence" class="screen" hidden aria-label="AI Automation and Performance Excellence">
+    <header class="bar">
+      <button type="button" class="back" data-go="home">← Back</button>
+      <span class="bar-name">AI, Automation &amp; Performance Excellence</span>
+    </header>
+    <div class="content">
+      <h1 class="section-title">AI, Automation &amp; Performance Excellence</h1>
+      <div class="product-grid">
+        <button type="button" class="product" data-go="qa">
+          <span class="product-name">QA.MAFer.AI</span>
+          <span class="product-launch">Launch application <span aria-hidden="true">→</span></span>
+        </button>
+        <button type="button" class="product" data-go="service360">
+          <span class="product-name">SHARE Service360</span>
+          <span class="product-launch">Launch application <span aria-hidden="true">→</span></span>
+        </button>
       </div>
-      <div class="rise-orbit-art" aria-hidden="true">
-        <div class="orbit orbit-outer"></div><div class="orbit orbit-mid"></div><div class="orbit orbit-inner"></div>
-        <div class="orbital orbital-a"></div><div class="orbital orbital-b"></div><div class="orbital orbital-c"></div>
-        <div class="art-core"><div class="core-flare"></div><div class="core-word">RISE</div><div class="core-line">OUR NEXT CHAPTER</div></div>
-        <div class="art-label art-label-a">SELF-SERVICE <span>↗</span></div><div class="art-label art-label-b">INTELLIGENCE <span>↗</span></div><div class="art-label art-label-c">EXCELLENCE <span>↗</span></div>
+    </div>
+  </section>
+
+  <section id="screen-qa" class="screen" hidden aria-label="QA.MAFer.AI demo">
+    <header class="demo-bar">
+      <button type="button" class="back" data-go="excellence">← Back</button>
+      <span class="bar-name">QA.MAFer.AI</span>
+      <div class="demo-actions">
+        <button type="button" class="small-button" data-reload="qa">Reload</button>
+        <a id="external-qa" class="small-button" href="https://expert-adventure-7z351g7.pages.github.io/" target="_blank" rel="noopener noreferrer">Open separately ↗</a>
+        <button type="button" class="small-button" data-expand="qa">Expand</button>
       </div>
-    </div>
-    <div class="theme-home-grid" aria-label="Explore the two themes">
-      <button class="theme-home-card theme-one" type="button" data-go="theme1">
-        <span class="theme-home-overline">THEME 01 <span class="theme-chip">WHAT WE'VE DELIVERED</span></span>
-        <span class="theme-home-name">AI & Self-Service</span>
-        <span class="theme-home-description">Contact-centre innovations already delivered across AI-assisted service and voice journeys.</span>
-        <span class="theme-home-arrow">EXPLORE DELIVERIES &nbsp; ↗</span>
-      </button>
-      <button class="theme-home-card theme-two" type="button" data-go="theme2">
-        <span class="theme-home-overline">THEME 02 <span class="theme-chip">INTERACTIVE SHOWCASE</span></span>
-        <span class="theme-home-name">AI, Automation &<br>Performance Excellence</span>
-        <span class="theme-home-description">Step inside QA.MAFer.AI and SHARE Service360—without leaving the RISE experience.</span>
-        <span class="theme-home-arrow">OPEN INNOVATION STUDIO &nbsp; ↗</span>
-      </button>
+    </header>
+    <div id="embed-qa" class="embed">
+      <iframe id="frame-qa" title="QA.MAFer.AI live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
     </div>
   </section>
 
-  <section class="view" id="view-theme1" data-view="theme1" aria-labelledby="theme1-title" hidden>
-    <div class="section-head"><span class="chapter-number">THEME 01 / AI & SELF-SERVICE</span><span class="chapter-tag">DELIVERED CAPABILITIES</span></div>
-    <div class="theme-heading-layout">
-      <div><p class="section-kicker">WHAT WE'VE DELIVERED</p><h2 id="theme1-title" class="display-title theme-display">Better service.<br><em>Powered by AI.</em></h2></div>
-      <div class="theme-heading-aside">Intelligent customer support and streamlined contact-centre journeys—moving from traditional handling towards more helpful self-service.</div>
+  <section id="screen-service360" class="screen" hidden aria-label="SHARE Service360 demo">
+    <header class="demo-bar">
+      <button type="button" class="back" data-go="excellence">← Back</button>
+      <span class="bar-name">SHARE Service360</span>
+      <div class="demo-actions">
+        <button type="button" class="small-button" data-reload="service360">Reload</button>
+        <a id="external-service360" class="small-button" href="https://expert-adventure-7z351g7.pages.github.io/share-service360/" target="_blank" rel="noopener noreferrer">Open separately ↗</a>
+        <button type="button" class="small-button" data-expand="service360">Expand</button>
+      </div>
+    </header>
+    <div id="embed-service360" class="embed">
+      <iframe id="frame-service360" title="SHARE Service360 live demonstration" loading="eager" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
     </div>
-    <div class="delivery-grid">
-      <button type="button" class="delivery-card" data-delivery="ksa">
-        <div class="delivery-top"><span class="delivery-sequence">01 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
-        <div class="delivery-icon">✧</div><div class="delivery-type">SHARE · ASSISTIVE AI</div><h3>KSA launch</h3><p>AI-powered support introduced for SHARE customer interactions.</p>
-        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
-      </button>
-      <button type="button" class="delivery-card" data-delivery="oman">
-        <div class="delivery-top"><span class="delivery-sequence">02 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
-        <div class="delivery-icon">◎</div><div class="delivery-type">SHARE · ASSISTIVE AI</div><h3>Oman launch</h3><p>Expanded AI-supported customer service to another market.</p>
-        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
-      </button>
-      <button type="button" class="delivery-card" data-delivery="ivr">
-        <div class="delivery-top"><span class="delivery-sequence">03 /</span><span class="delivery-status"><span></span> DELIVERED</span></div>
-        <div class="delivery-icon">↗</div><div class="delivery-type">CONTACT CENTRE · VOICE</div><h3>Voice & IVR modernization</h3><p>Updated the underlying voice environment and validated connected service journeys.</p>
-        <div class="delivery-bottom"><span>EXPLORE DELIVERY</span><span>↗</span></div>
-      </button>
-    </div>
-    <div class="journey-ribbon">
-      <div><span class="ribbon-overline">THE EXPERIENCE WE'RE BUILDING ON</span><strong>A simpler customer journey</strong></div>
-      <div class="ribbon-steps"><span>Customer need</span><i>→</i><span>AI / self-service</span><i>→</i><span>Resolution or advisor</span></div>
-    </div>
-    <p class="editor-note">Delivery summary for content review; operational numbers and internal system details are intentionally excluded from this public-hosted version.</p>
-    <div class="theme-next"><button class="text-link" data-go="theme2" type="button">Next: AI, Automation & Performance Excellence &nbsp; ↗</button></div>
-  </section>
-
-  <section class="view" id="view-theme2" data-view="theme2" aria-labelledby="theme2-title" hidden>
-    <div class="section-head"><span class="chapter-number">THEME 02 / AI, AUTOMATION & PERFORMANCE EXCELLENCE</span><span class="chapter-tag">LIVE PRODUCT SHOWCASE</span></div>
-    <p class="section-kicker">BUILT TO ENABLE BETTER OPERATIONS</p>
-    <h2 id="theme2-title" class="display-title mid-title">Don't just hear about it.<br><em>Experience it.</em></h2>
-    <p class="section-intro compact">Explore two interactive product experiences directly inside RISE. Select a platform to launch its demonstration.</p>
-    <div class="product-showcase-grid">
-      <article class="showcase-product qa-showcase">
-        <div class="showcase-product-top"><span class="showcase-counter">01 / INTELLIGENT QUALITY</span><span class="showcase-mark">✦</span></div>
-        <div class="product-preview qa-preview" aria-hidden="true">
-          <div class="fake-window-top"><span></span><span></span><span></span><small>QA.MAFer.AI / PERFORMANCE INTELLIGENCE</small></div>
-          <div class="qa-preview-main"><div class="qa-preview-score">96<span>%</span><small>ILLUSTRATIVE</small></div><div class="qa-preview-bars"><i></i><i></i><i></i><i></i><i></i></div><div class="qa-preview-stats"><b>QUALITY</b><b>EVIDENCE</b><b>COACHING</b></div></div>
-        </div>
-        <div class="showcase-content"><div class="showcase-product-eyebrow">RULES + AI · QUALITY ASSURANCE</div><h3>QA.MAFer.AI</h3><p>Evidence-led quality assessment, governed rubrics, agent performance and actionable coaching opportunities.</p>
-          <div class="feature-chips"><span>QA scoring</span><span>Rubric governance</span><span>Performance insights</span></div>
-          <div class="showcase-actions"><button type="button" class="button button-primary" data-go="demo-qa">Launch inside RISE <span>↗</span></button><a class="button button-quiet" data-external="qa" target="_blank" rel="noopener noreferrer">Open standalone ↗</a></div>
-        </div>
-      </article>
-      <article class="showcase-product service-showcase">
-        <div class="showcase-product-top"><span class="showcase-counter">02 / COLLEAGUE ENABLEMENT</span><span class="showcase-mark">◈</span></div>
-        <div class="product-preview service-preview" aria-hidden="true">
-          <div class="fake-window-top"><span></span><span></span><span></span><small>SHARE SERVICE360 / AMBASSADOR VIEW</small></div>
-          <div class="service-preview-main"><div class="service-preview-circle"><span>360°</span></div><div class="service-preview-widgets"><i></i><i></i><i></i><i></i></div></div>
-        </div>
-        <div class="showcase-content"><div class="showcase-product-eyebrow">EXPERIENCE + ENABLEMENT · OPERATIONS</div><h3>SHARE Service360</h3><p>One connected view of ambassador performance, knowledge, training progression and operational engagement.</p>
-          <div class="feature-chips"><span>Ambassador view</span><span>BU insights</span><span>Training & knowledge</span></div>
-          <div class="showcase-actions"><button type="button" class="button button-primary" data-go="demo-service360">Launch inside RISE <span>↗</span></button><a class="button button-quiet" data-external="service360" target="_blank" rel="noopener noreferrer">Open standalone ↗</a></div>
-        </div>
-      </article>
-    </div>
-    <p class="editor-note">The visuals above are illustrative. Use the launch buttons for the actual application demos. Embedding depends on each source site's browser security settings.</p>
-  </section>
-
-  <section class="view demo-view" id="view-demo-qa" data-view="demo-qa" aria-labelledby="qa-demo-title" hidden>
-    <div class="demo-toolbar">
-      <div class="demo-identity"><span class="demo-back-wrap"><button type="button" data-go="theme2" class="demo-back" aria-label="Return to Theme 2">←</button></span><span class="demo-platform-icon">✦</span><span><span class="demo-mini-eyebrow">LIVE DEMONSTRATION · THEME 02</span><strong id="qa-demo-title">QA.MAFer.AI</strong></span></div>
-      <div class="demo-controls"><span class="demo-badge">INTERACTIVE APPLICATION</span><button type="button" data-reload="qa">↻ Reload</button><a data-external="qa" href="#" target="_blank" rel="noopener noreferrer">↗ Open separately</a><button type="button" data-zoom="qa">⛶ Expand</button></div>
-    </div>
-    <div class="demo-shell" id="shell-qa">
-      <div class="demo-placeholder" id="placeholder-qa"><div class="demo-loading-mark">✦</div><h3>Launching QA.MAFer.AI</h3><p>Loading the application within RISE. If a blank screen or browser restriction appears, choose “Open separately” above.</p></div>
-      <iframe id="frame-qa" title="QA.MAFer.AI interactive demo" allow="fullscreen; clipboard-read; clipboard-write" referrerpolicy="no-referrer" loading="eager"></iframe>
-    </div>
-    <div class="demo-bottom"><span>The RISE navigation stays available while you explore the real app.</span><button type="button" data-go="demo-service360">Next demo: SHARE Service360 &nbsp; ↗</button></div>
-  </section>
-
-  <section class="view demo-view" id="view-demo-service360" data-view="demo-service360" aria-labelledby="service-demo-title" hidden>
-    <div class="demo-toolbar">
-      <div class="demo-identity"><span class="demo-back-wrap"><button type="button" data-go="theme2" class="demo-back" aria-label="Return to Theme 2">←</button></span><span class="demo-platform-icon service-icon">◈</span><span><span class="demo-mini-eyebrow">LIVE DEMONSTRATION · THEME 02</span><strong id="service-demo-title">SHARE Service360</strong></span></div>
-      <div class="demo-controls"><span class="demo-badge">INTERACTIVE APPLICATION</span><button type="button" data-reload="service360">↻ Reload</button><a data-external="service360" href="#" target="_blank" rel="noopener noreferrer">↗ Open separately</a><button type="button" data-zoom="service360">⛶ Expand</button></div>
-    </div>
-    <div class="demo-shell" id="shell-service360">
-      <div class="demo-placeholder" id="placeholder-service360"><div class="demo-loading-mark">◈</div><h3>Launching SHARE Service360</h3><p>Loading the application within RISE. If a blank screen or browser restriction appears, choose “Open separately” above.</p></div>
-      <iframe id="frame-service360" title="SHARE Service360 interactive demo" allow="fullscreen; clipboard-read; clipboard-write" referrerpolicy="no-referrer" loading="eager"></iframe>
-    </div>
-    <div class="demo-bottom"><span>Switch between demos without closing the presentation.</span><button type="button" data-go="demo-qa">Back to QA.MAFer.AI &nbsp; ↗</button></div>
-  </section>
-
-  <section class="view" id="view-closing" data-view="closing" aria-labelledby="closing-title" hidden>
-    <div class="closing-center"><div class="closing-ring" aria-hidden="true"><span>✦</span></div><p class="section-kicker">TWO THEMES. ONE CONNECTED FUTURE.</p><h2 id="closing-title" class="closing-title">We didn't just imagine<br>what's next. <em>We RISE.</em></h2><p>Smarter service. Better tools. Continuous excellence.</p><div class="closing-actions"><button class="button button-primary" type="button" data-go="home">Return home ↗</button><button class="button button-quiet" type="button" data-go="theme2">Revisit live demonstrations →</button></div><div class="closing-signature">RISE <span>·</span> CUSTOMER SOLUTIONS</div></div>
   </section>
 </main>
-
-<footer class="presentation-dock" aria-label="Presentation controls">
-  <button type="button" class="dock-button" id="prev-screen" aria-label="Previous section">←</button>
-  <button type="button" class="dock-current" id="dock-jump" title="Explore sections"><span id="current-number">00</span><span class="dock-divider">/</span><span id="total-number">05</span><span class="dock-label" id="current-name">Welcome</span><span class="dock-chevron">⌄</span></button>
-  <div class="dock-progress" aria-hidden="true"><div id="dock-progress-fill"></div></div>
-  <button type="button" class="dock-button dock-next" id="next-screen" aria-label="Next section">→</button>
-</footer>
-<div class="dialog-backdrop" id="detail-dialog" hidden>
-  <div class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="detail-title">
-    <button class="dialog-close" type="button" data-close aria-label="Close details">×</button>
-    <span class="dialog-overline" id="detail-category">RISE / DELIVERY</span>
-    <div class="dialog-glyph" aria-hidden="true">✧</div><h2 id="detail-title"></h2><p class="dialog-lead" id="detail-description"></p><div id="detail-facts" class="dialog-facts"></div>
-    <div class="dialog-footer"><span>RISE · CUSTOMER SOLUTIONS</span><button type="button" data-close class="text-link">Back to Theme 1 ↗</button></div>
-  </div>
-</div>
-<div class="dialog-backdrop jump-backdrop" id="jump-dialog" hidden>
-  <div class="jump-panel" role="dialog" aria-modal="true" aria-labelledby="jump-title"><div class="jump-header"><div><p class="section-kicker">QUICK NAVIGATION</p><h2 id="jump-title">Where to next?</h2></div><button class="dialog-close" type="button" data-close aria-label="Close navigation">×</button></div><div id="jump-links" class="jump-links"></div><p class="jump-hint">Use ← → to change section, F for fullscreen, and Escape to close.</p></div>
-</div>
-<div class="keyboard-hint">PRESS <kbd>←</kbd> <kbd>→</kbd> TO EXPLORE <span>·</span> <kbd>F</kbd> FULLSCREEN</div>
+<script>
+(() => {
+  "use strict";
+  const sources = {
+    qa: "https://expert-adventure-7z351g7.pages.github.io/",
+    service360: "https://expert-adventure-7z351g7.pages.github.io/share-service360/"
+  };
+  const names = new Set(["home","self-service","excellence","qa","service360"]);
+  const framesLoaded = new Set();
+  let current = "home";
+  const get = id => document.getElementById(id);
+  function show(requested, replace=false) {
+    const id=names.has(requested)?requested:"home";
+    current=id;
+    for (const name of names) {
+      const screen=get("screen-"+name);
+      const visible=name===id;
+      screen.hidden=!visible;
+      screen.classList.toggle("active",visible);
+    }
+    if (id==="qa" || id==="service360") {
+      if (!framesLoaded.has(id)) {
+        get("frame-"+id).src=sources[id];
+        framesLoaded.add(id);
+      }
+    }
+    if (location.hash!=="#"+id) {
+      if (replace) history.replaceState(null,"","#"+id);
+      else history.pushState(null,"","#"+id);
+    }
+    document.title="RISE | "+(id==="home"?"Customer Solutions":id==="self-service"?"AI & Self-Service":id==="excellence"?"AI, Automation & Performance Excellence":id==="qa"?"QA.MAFer.AI":"SHARE Service360");
+  }
+  document.addEventListener("click", e => {
+    const button=e.target.closest("button");
+    if (!button) return;
+    if (button.dataset.go) { show(button.dataset.go);return; }
+    if (button.dataset.reload) {
+      const id=button.dataset.reload;
+      get("frame-"+id).src=sources[id];
+      framesLoaded.add(id);
+      return;
+    }
+    if (button.dataset.expand) {
+      const box=get("embed-"+button.dataset.expand);
+      try {
+        if (document.fullscreenElement) document.exitFullscreen();
+        else if (box.requestFullscreen) box.requestFullscreen();
+      } catch (err) { console.warn("Fullscreen unavailable",err); }
+    }
+  });
+  window.addEventListener("popstate",()=>show(location.hash.slice(1),true));
+  document.addEventListener("keydown",e=>{
+    if (e.key==="Escape" && !document.fullscreenElement && current!=="home") show(current==="qa"||current==="service360"?"excellence":"home");
+  });
+  show(location.hash.slice(1)||"home",true);
+})();
+</script>
 </body>
 </html>
