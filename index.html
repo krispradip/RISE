@@ -492,7 +492,7 @@ body.maf-modal-open{overflow:hidden}
 .agentic-main{flex:1 1 auto;min-height:0;display:grid;
  grid-template-columns:minmax(0,1fr) clamp(68px,6.2vw,108px);
  gap:clamp(7px,.85vw,16px);align-items:center}
-.agentic-neural{height:auto;min-height:0;display:flex;align-items:center;justify-content:center}
+.agentic-neural{height:auto;min-height:0;display:flex;align-items:center;justify-content:center;transform:translateX(clamp(-38px,-2vw,-18px))}
 .agentic-orb{
  position:relative;display:grid;place-items:center;width:min(100%,106px);aspect-ratio:1;
  border-radius:50%;isolation:isolate;
@@ -547,12 +547,14 @@ body.maf-modal-open{overflow:hidden}
 }
 @media(max-width:979px){
  #page-automation #vox-flow{height:clamp(340px,49vh,390px)}
+ .agentic-neural{transform:translateX(-12px)}
  #vox-agentic-workbench{padding:9px;gap:7px}
  .agentic-main{grid-template-columns:minmax(0,1fr) clamp(57px,6vw,77px);gap:7px}
  .agentic-op{font-size:10px;gap:4px}
 }
 @media(max-width:760px){
  #page-automation .workspace{justify-content:flex-start;gap:5px}
+ .agentic-neural{transform:translateX(-6px)}
  #page-automation #vox-flow{height:clamp(300px,52vh,365px)}
  #page-automation #vox-flow>.flowblock{padding:6px;gap:4px}
  #vox-agentic-workbench{padding:5px;gap:4px}
