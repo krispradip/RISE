@@ -249,6 +249,72 @@
   .feature-copy p{font-size:11px}
 }
 
+
+/* Three interactive showcases — compact full-screen layouts. */
+.landing-navigation{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.landing-navigation button{font-size:clamp(9px,.73vw,11px);padding-left:2px;padding-right:2px}
+#screen-self-service .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));max-height:none}
+#screen-automation .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-height:460px;width:min(1100px,100%);align-self:center}
+#screen-excellence .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1150px;width:100%;align-self:center}
+.launch-grid{display:grid;grid-template-columns:1.12fr 1fr 1fr;gap:clamp(16px,2.4vw,34px);flex:1 1 0;min-height:0;max-height:450px}
+.launch-highlight,.launch-milestone{background:#f9f5fa;border-top:3px solid var(--burgundy);padding:clamp(22px,2.6vw,40px);display:flex;flex-direction:column;justify-content:center;min-height:0}
+.launch-highlight{background:var(--purple);color:#fff;border-top-color:var(--purple)}
+.launch-tag{font-size:11px;letter-spacing:1.3px;font-weight:700;color:#966e89;margin-bottom:clamp(14px,2vh,25px)}
+.launch-highlight .launch-tag{color:#c7b4e0}
+.launch-highlight strong{font-size:clamp(70px,9vw,138px);line-height:.95;letter-spacing:-6px}
+.launch-highlight strong span{font-size:.5em}
+.launch-highlight p{font-size:clamp(15px,1.5vw,23px);font-weight:700;margin:13px 0}
+.launch-highlight small{font-size:11px;line-height:1.4;color:#dfd4ef}
+.launch-milestone strong{font-size:clamp(40px,4vw,66px);letter-spacing:-2px;color:var(--burgundy);line-height:1}
+.launch-milestone h3{font-size:clamp(17px,1.5vw,24px);font-weight:500;margin:20px 0 7px}
+.launch-milestone p{font-size:14px;color:#514551;margin:0}
+.launch-footer{display:flex;justify-content:space-between;gap:12px;padding:16px 0;font-size:12px;color:var(--burgundy)}
+.maf-layout{display:grid;grid-template-columns:1fr .8fr;gap:clamp(20px,4vw,70px);flex:1 1 0;min-height:0;align-items:center}
+.maf-kicker,.qa-time{font-size:11px;font-weight:700;letter-spacing:1.6px;color:#a96981}
+.maf-hero h3{font-size:clamp(34px,3.6vw,58px);line-height:1.06;letter-spacing:-1.6px;margin:17px 0;color:var(--burgundy)}
+.maf-hero p{font-size:clamp(14px,1.25vw,19px);line-height:1.5;max-width:630px}
+.maf-status{display:inline-flex;margin-top:22px;padding:11px 17px;background:#f5eaf1;border-radius:22px;font-size:12px;color:var(--burgundy)}
+.maf-flow{border:1px solid #e9dfea;border-radius:15px;padding:25px;background:#fbf8fc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;min-height:290px}
+.maf-flow-head{background:var(--burgundy);color:#fff;border-radius:22px;padding:15px 28px;font-weight:700;letter-spacing:1px}
+.maf-flow-arrow{color:var(--burgundy);font-size:26px}
+.maf-business{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%}
+.maf-business span{background:#fff;border:1px solid #e0d4e2;border-radius:10px;padding:12px;text-align:center;font-size:clamp(11px,1.0vw,14px)}
+.bots-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(15px,2vw,29px);flex:1 1 0;min-height:0;max-height:445px}
+.bot-slot{background:var(--purple);color:#fff;border-radius:13px;padding:clamp(18px,2.3vw,35px);display:flex;flex-direction:column;min-height:0}
+.bot-slot:nth-child(even){background:var(--burgundy)}
+.bot-slot>span{font-size:11px;letter-spacing:1.6px;color:#c4b6dc}
+.bot-slot h3{margin:auto 0 12px;font-size:clamp(25px,2.5vw,42px);letter-spacing:-.9px}
+.bot-slot p{font-size:13px;color:#d7cbdf;margin:0}
+.retail-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,32px);flex:1 1 0;min-height:0;max-height:430px}
+.retail-block{border-top:2px solid var(--burgundy);background:#fbf8fb;padding:clamp(22px,2.5vw,40px);display:flex;flex-direction:column}
+.retail-num{font-size:clamp(35px,4vw,61px);color:var(--pink);margin-bottom:auto}
+.retail-block h3{font-size:clamp(21px,2vw,32px);font-weight:500;line-height:1.12;margin:12px 0}
+.retail-block p{font-size:clamp(12px,1.1vw,16px);line-height:1.47;margin:0;color:#5b515b}
+.retail-stage{border-radius:30px;background:var(--mint);padding:13px 24px;color:#2b5f43;font-size:clamp(11px,1vw,15px);margin:clamp(10px,1.5vh,20px) 0}
+.retail-stage span{font-weight:700;margin-right:18px}
+.qa-story{display:grid;grid-template-columns:1.15fr .75fr;gap:clamp(20px,4vw,65px);flex:1 1 0;min-height:0;align-items:center}
+.qa-story-main h3{font-size:clamp(32px,3.4vw,54px);font-weight:600;color:var(--burgundy);line-height:1.08;margin:18px 0}
+.qa-story-main p{font-size:clamp(14px,1.25vw,19px);line-height:1.55;max-width:685px}
+.qa-handoff{padding:clamp(24px,3vw,48px);border-radius:17px;background:var(--purple);color:white;display:flex;flex-direction:column;align-items:flex-start}
+.qa-handoff span{font-size:11px;letter-spacing:1.4px;color:#d3c4ea}
+.qa-handoff h3{font-size:clamp(29px,2.9vw,48px);line-height:1.05;margin:25px 0 8px}
+.qa-handoff p{font-size:14px;color:#ddcdec;line-height:1.45}
+.qa-handoff button{margin-top:30px;border:0;border-radius:24px;background:white;color:var(--purple);font-size:12px;font-weight:700;padding:14px 23px}
+.qa-handoff button:hover{background:#f1e5fb}
+@media(max-width:800px){
+ .landing-navigation{grid-template-columns:1fr;gap:4px}
+ .landing-navigation button{font-size:9px;padding:4px 2px}
+ #screen-self-service .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+ #screen-automation .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .launch-grid{gap:7px}.launch-highlight,.launch-milestone{padding:12px}
+ .launch-highlight strong{font-size:clamp(35px,7vw,65px);letter-spacing:-2px}
+ .launch-highlight p{font-size:11px}.launch-highlight small{font-size:8px}.launch-milestone strong{font-size:clamp(21px,5vw,35px)}.launch-milestone h3{font-size:12px}.launch-milestone p{font-size:10px}
+ .maf-layout{gap:10px}.maf-hero h3{font-size:clamp(20px,4.8vw,34px)}.maf-hero p{font-size:11px}.maf-flow{padding:10px;min-height:210px}.maf-business{grid-template-columns:repeat(2,1fr);gap:4px}.maf-business span{font-size:9px;padding:7px}
+ .bots-grid{gap:7px}.bot-slot{padding:10px}.bot-slot h3{font-size:16px}.bot-slot p{font-size:9px}
+ .retail-flow{gap:8px}.retail-block{padding:12px}.retail-num{font-size:30px}.retail-block h3{font-size:14px}.retail-block p{font-size:10px}
+ .qa-story{gap:10px}.qa-story-main h3{font-size:24px}.qa-story-main p{font-size:11px}.qa-handoff{padding:17px}.qa-handoff h3{font-size:24px}.qa-handoff button{padding:10px 13px;font-size:10px}
+}
+
 </style>
 </head>
 <body>
@@ -260,6 +326,7 @@
   <nav class="site-links" aria-label="Main site navigation">
     <button type="button" data-go="home">Introduction</button>
     <button type="button" data-go="self-service">AI &amp; Self-Service</button>
+    <button type="button" data-go="automation">AI &amp; Automation</button>
     <button type="button" data-go="excellence">Performance Excellence</button>
     <button type="button" data-toggle-nav>Explore all</button>
   </nav>
@@ -270,11 +337,12 @@
     <div class="landing-topline"><span>OVERVIEW</span><span>UPDATED 16 NOV 2026</span></div>
     <div class="landing-intro">
       <h1>CUSTOMER<br>SOLUTIONS.</h1>
-      <p>AI &amp; SELF-SERVICE. AUTOMATION &amp; PERFORMANCE EXCELLENCE.</p>
+      <p>AI &amp; SELF-SERVICE. AI &amp; AUTOMATION. AI &amp; PERFORMANCE EXCELLENCE.</p>
     </div>
-    <div class="landing-navigation" aria-label="Explore the two focus areas">
+    <div class="landing-navigation" aria-label="Explore the three showcases">
       <button type="button" data-go="self-service"><span>01 | AI &amp; SELF-SERVICE</span><span aria-hidden="true">→</span></button>
-      <button type="button" data-go="excellence"><span>02 | AI, AUTOMATION &amp; PERFORMANCE EXCELLENCE</span><span aria-hidden="true">→</span></button>
+      <button type="button" data-go="automation"><span>02 | AI &amp; AUTOMATION</span><span aria-hidden="true">→</span></button>
+      <button type="button" data-go="excellence"><span>03 | AI &amp; PERFORMANCE EXCELLENCE</span><span aria-hidden="true">→</span></button>
     </div>
     <div class="landing-feature">
       <h2>FEATURED SOLUTION.</h2>
@@ -298,28 +366,58 @@
 </section>
 
 <section id="screen-self-service" class="screen" hidden>
-    <header class="topbar"><div class="top-left"><button class="back" data-go="home">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | QUARTER 3 BUSINESS REVIEW</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="home">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | SHOWCASE</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
     <div class="slide"><h2 class="menu-heading">AI &amp; Self-Service</h2><div class="rule"></div>
       <div class="menu-grid">
-        <button class="menu-card" data-go="launches"><h3>Launches so far</h3><span class="go-icon">↗</span></button>
-        <button class="menu-card" data-go="vox"><span class="coming">COMING SOON</span><h3>VOX Digital Concierge</h3><span class="go-icon">↗</span></button>
-        <button class="menu-card" data-go="priorities"><h3>Upcoming Priorities</h3><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="maf-one"><h3>MAF One</h3><p>One connected AI entry point across businesses</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="bots"><h3>4 Bots</h3><p>Bot showcase</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="launches"><h3>What went live</h3><p>Launches and numbers</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="priorities"><h3>What's in pipeline</h3><p>Upcoming capabilities and priorities</p><span class="go-icon">↗</span></button>
       </div>
-      <div class="footer"><span>INTELLECTUAL CAPITAL | CUSTOMER CARE SOLUTIONS</span><span></span></div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span></span></div>
     </div>
   </section>
 
   <section id="screen-launches" class="screen" hidden>
-    <header class="topbar"><div class="top-left"><button class="back" data-go="self-service">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | QUARTER 3 BUSINESS REVIEW</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
-    <div class="slide"><div class="title-row"><h2>LAUNCHES SO FAR</h2></div><div class="rule"></div><div class="slide-content"></div>
-      <div class="footer"><span>INTELLECTUAL CAPITAL | CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="self-service">← Back</button><span class="eyebrow">AI &amp; SELF-SERVICE | GO-LIVES</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><div class="title-row"><h2>WHAT WENT LIVE</h2></div><div class="rule"></div>
+      <div class="launch-grid">
+        <article class="launch-highlight"><div class="launch-tag">SHARE ASSISTIVE AI</div><strong>65<span>%</span></strong><p>AI-handled interactions</p><small>Previously reported figure · confirm latest before presentation</small></article>
+        <article class="launch-milestone"><div class="launch-tag">KSA</div><strong>06 SEP</strong><h3>SHARE Assistive AI</h3><p>Launched 6 September 2026</p></article>
+        <article class="launch-milestone"><div class="launch-tag">OMAN</div><strong>16 SEP</strong><h3>SHARE Assistive AI</h3><p>Launched 16 September 2026</p></article>
+      </div>
+      <div class="launch-footer"><span>Launch milestones</span><span>See also the 4 Bots showcase and upcoming pipeline</span></div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    </div>
+  </section>
+
+<section id="screen-maf-one" class="screen" hidden>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="self-service">← Back</button><span class="eyebrow">AI &amp; SELF-SERVICE | MAF ONE</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><div class="title-row"><h2>MAF ONE</h2></div><div class="rule"></div>
+      <div class="maf-layout">
+        <div class="maf-hero"><div class="maf-kicker">UNIFIED AI ENTRY POINT</div><h3>One customer conversation.<br>Connected to the right service.</h3><p>A master AI layer intended to route customer needs to specialist brand and business capabilities.</p><span class="maf-status">Roadmap / evolving capability</span></div>
+        <div class="maf-flow"><div class="maf-flow-head">MAF ONE</div><div class="maf-flow-arrow">↓</div><div class="maf-business"><span>Retail</span><span>Entertainment</span><span>Properties</span><span>SHARE</span><span>Lifestyle</span><span>Fintech</span></div></div>
+      </div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    </div>
+  </section>
+  <section id="screen-bots" class="screen" hidden>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="self-service">← Back</button><span class="eyebrow">AI &amp; SELF-SERVICE | BOT SHOWCASE</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><div class="title-row"><h2>4 BOTS</h2></div><div class="rule"></div>
+      <div class="bots-grid">
+        <article class="bot-slot"><span>01</span><h3>Bot 01</h3><p>Details to be added</p></article>
+        <article class="bot-slot"><span>02</span><h3>Bot 02</h3><p>Details to be added</p></article>
+        <article class="bot-slot"><span>03</span><h3>Bot 03</h3><p>Details to be added</p></article>
+        <article class="bot-slot"><span>04</span><h3>Bot 04</h3><p>Details to be added</p></article>
+      </div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span>Names and deployment statuses pending confirmation</span></div>
     </div>
   </section>
 
   <section id="screen-vox" class="screen" hidden>
-    <header class="topbar"><div class="top-left"><button class="back" data-go="self-service">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | QUARTER 3 BUSINESS REVIEW</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="automation">← Back</button><span class="eyebrow">AI &amp; AUTOMATION | VOX AI AGENT</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
     <div class="slide">
-      <div class="title-row"><span class="status">COMING SOON</span><h2>VOX DIGITAL CONCIERGE</h2></div><div class="rule"></div>
+      <div class="title-row"><span class="status">COMING SOON</span><h2>VOX AI AGENT</h2></div><div class="rule"></div>
       <p class="vox-blurb">An AI-powered cinema companion that progressively evolves from answering questions, to completing bookings, to assisting customers during their visit.</p>
       <div class="vox-showcase">
         <div class="vox-phone" data-journey="0" role="button" tabindex="0" aria-label="Explore Conversational discovery"><div class="phone-bar"><span>VOX Cinemas</span><span>Virtual Assistant</span></div><div class="phone-circle"></div><div class="phone-title">Your next great movie<br>starts here</div><div class="phone-muted">What are you in the mood to watch?</div><div class="phone-blue">Let's talk movies</div><div class="phone-chat">Hi, I want to watch a movie with my son today. Can you advise something between 4:00 to 6:00 PM?</div><div class="phone-footer">Ask about movies, bookings, refunds...</div></div>
@@ -346,14 +444,47 @@
     </div>
   </section>
 
+<section id="screen-automation" class="screen" hidden>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="home">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | SHOWCASE</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><h2 class="menu-heading">AI &amp; Automation</h2><div class="rule"></div>
+      <div class="menu-grid">
+        <button class="menu-card" data-go="vox"><h3>VOX AI Agent</h3><p>AI-powered cinema concierge and guided bookings</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="retail"><h3>Retail AI Agent</h3><p>Tickets, email responses and back-office processes</p><span class="go-icon">↗</span></button>
+      </div><div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    </div>
+  </section>
+  <section id="screen-retail" class="screen" hidden>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="automation">← Back</button><span class="eyebrow">AI &amp; AUTOMATION | RETAIL AI AGENT</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><div class="title-row"><h2>RETAIL AI AGENT</h2></div><div class="rule"></div>
+      <div class="retail-flow">
+        <article class="retail-block"><div class="retail-num">01</div><h3>AI ticket categorisation</h3><p>Turn incoming emails into structured tickets in OneView.</p></article>
+        <article class="retail-block"><div class="retail-num">02</div><h3>Suggested responses</h3><p>Draft email replies for review to reduce manual handling effort.</p></article>
+        <article class="retail-block"><div class="retail-num">03</div><h3>Back-office automation</h3><p>Reduce repetitive processing across selected Retail workflows.</p></article>
+      </div>
+      <div class="retail-stage"><span>PHASE 1</span> Email categorisation and response POC approved; production rollout planned.</div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    </div>
+  </section>
+
   <section id="screen-excellence" class="screen" hidden>
     <header class="topbar"><div class="top-left"><button class="back" data-go="home">← Back</button><span class="eyebrow">CUSTOMER SOLUTIONS | QUARTER 3 BUSINESS REVIEW</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav aria-label="Explore all sections">☷ &nbsp; Explore</button><span class="year">2026</span></div></header>
-    <div class="slide"><h2 class="menu-heading">AI, Automation &amp; Performance Excellence</h2><div class="rule"></div>
+    <div class="slide"><h2 class="menu-heading">AI &amp; Performance Excellence</h2><div class="rule"></div>
       <div class="menu-grid">
-        <button class="menu-card" data-go="qa"><h3>MAFerLens</h3><p>Automated and intelligent QA agent</p><span class="go-icon">↗</span></button>
-        <button class="menu-card" data-go="service360"><h3>SHARE Service360</h3><p>All in one SHARE Ambassador Platform</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="qa-intro"><h3>AI QA · MAFerLens</h3><p>30-second introduction, then live demo with Pradip</p><span class="go-icon">↗</span></button>
+        <button class="menu-card" data-go="service360"><h3>Ops Excellence · SHARE Service360</h3><p>All in one SHARE Ambassador Platform · Live demo</p><span class="go-icon">↗</span></button>
       </div>
       <div class="footer"><span>INTELLECTUAL CAPITAL | CUSTOMER CARE SOLUTIONS</span><span></span></div>
+    </div>
+  </section>
+
+<section id="screen-qa-intro" class="screen" hidden>
+    <header class="topbar"><div class="top-left"><button class="back" data-go="excellence">← Back</button><span class="eyebrow">AI &amp; PERFORMANCE EXCELLENCE | QA</span></div><div class="header-actions"><button type="button" class="nav-trigger" data-toggle-nav>☷ Explore</button><span class="year">2026</span></div></header>
+    <div class="slide"><div class="title-row"><h2>MAFerLens · INTELLIGENT QA</h2></div><div class="rule"></div>
+      <div class="qa-story">
+        <div class="qa-story-main"><span class="qa-time">30-SECOND INTRODUCTION</span><h3>Every interaction becomes a quality opportunity.</h3><p>MAFerLens combines governed rules with AI-supported assessment to evaluate customer interactions against a scorecard, surface supporting evidence and identify coaching opportunities. It helps QA teams review more consistently, while keeping uncertain or unverifiable criteria visible.</p></div>
+        <div class="qa-handoff"><span>LIVE DEMONSTRATION</span><h3>Over to Pradip.</h3><p>Demo subject to cost confirmation.</p><button type="button" data-go="qa">LAUNCH MAFerLens ↗</button></div>
+      </div>
+      <div class="footer"><span>CUSTOMER CARE SOLUTIONS</span><span>QA demo · subject to cost</span></div>
     </div>
   </section>
 
@@ -371,9 +502,11 @@
   <div class="explore-head"><span>Explore</span><button type="button" class="explore-close" data-close-nav aria-label="Close navigation">×</button></div>
   <button type="button" class="explore-home" data-go="home">⌂ &nbsp; Home <span>↗</span></button>
   <div class="explore-group">AI &amp; SELF-SERVICE</div>
-  <div class="explore-links"><button data-go="self-service">Overview <span>↗</span></button><button data-go="launches">Launches so far <span>↗</span></button><button data-go="vox">VOX Digital Concierge <span>↗</span></button><button data-go="priorities">Upcoming Priorities <span>↗</span></button></div>
-  <div class="explore-group">AI, AUTOMATION &amp; PERFORMANCE EXCELLENCE</div>
-  <div class="explore-links"><button data-go="excellence">Overview <span>↗</span></button><button data-go="qa">MAFerLens <span>↗</span></button><button data-go="service360">SHARE Service360 <span>↗</span></button></div>
+  <div class="explore-links"><button data-go="self-service">Overview <span>↗</span></button><button data-go="maf-one">MAF One <span>↗</span></button><button data-go="bots">4 Bots <span>↗</span></button><button data-go="launches">What went live <span>↗</span></button><button data-go="priorities">Pipeline <span>↗</span></button></div>
+  <div class="explore-group">AI &amp; AUTOMATION</div>
+  <div class="explore-links"><button data-go="automation">Overview <span>↗</span></button><button data-go="vox">VOX AI Agent <span>↗</span></button><button data-go="retail">Retail AI Agent <span>↗</span></button></div>
+  <div class="explore-group">AI &amp; PERFORMANCE EXCELLENCE</div>
+  <div class="explore-links"><button data-go="excellence">Overview <span>↗</span></button><button data-go="qa-intro">MAFerLens · 30-sec intro <span>↗</span></button><button data-go="qa">MAFerLens demo <span>↗</span></button><button data-go="service360">SHARE Service360 demo <span>↗</span></button></div>
   <p class="explore-hint">Jump to any section. No fixed slide sequence.</p>
 </aside>
 <div class="info-backdrop" id="info-backdrop" hidden>
@@ -388,7 +521,7 @@
 (() => {
   "use strict";
   const sources = Object.freeze({qa:"https://expert-adventure-7z351g7.pages.github.io/",service360:"https://expert-adventure-7z351g7.pages.github.io/share-service360/"});
-  const ids = ["home","self-service","launches","vox","priorities","excellence","qa","service360"];
+  const ids = ["home","self-service","maf-one","bots","launches","priorities","automation","vox","retail","excellence","qa-intro","qa","service360"];
   const loaded = new Set();
   const get = id => document.getElementById(id);
   let current = "home";
@@ -399,9 +532,9 @@
       for(const item of ids){const el=get("screen-"+item);const active=item===id;el.hidden=!active;el.classList.toggle("active",active)}
       if((id==="qa"||id==="service360")&&!loaded.has(id)){get("frame-"+id).src=sources[id];loaded.add(id)}
       if(location.hash!=="#"+id){if(replace)history.replaceState(null,"","#"+id);else history.pushState(null,"","#"+id)}
-      const titles={home:"Customer Solutions", "self-service":"AI & Self-Service", launches:"Launches so far", vox:"VOX Digital Concierge", priorities:"Upcoming Priorities", excellence:"AI, Automation & Performance Excellence", qa:"MAFerLens", service360:"SHARE Service360"};
+      const titles={home:"Customer Solutions", "self-service":"AI & Self-Service", "maf-one":"MAF One", bots:"4 Bots", launches:"What Went Live", priorities:"Pipeline", automation:"AI & Automation", vox:"VOX AI Agent",retail:"Retail AI Agent",excellence:"AI & Performance Excellence","qa-intro":"MAFerLens Overview", qa:"MAFerLens", service360:"SHARE Service360"};
       document.title=titles[id];
-      const activeGroup=id==="home"?"home":(["self-service","launches","vox","priorities"].includes(id)?"self-service":"excellence");
+      const activeGroup=id==="home"?"home":(["self-service","maf-one","bots","launches","priorities"].includes(id)?"self-service":(["automation","vox","retail"].includes(id)?"automation":"excellence"));
       document.querySelectorAll("#site-header [data-go]").forEach(button=>{
         const active=button.dataset.go===activeGroup;
         button.classList.toggle("is-current",active);
@@ -422,7 +555,7 @@
   window.addEventListener("popstate",()=>show(location.hash.slice(1),true));
   document.addEventListener("keydown",e=>{
     if(e.key!=="Escape"||document.fullscreenElement||current==="home")return;
-    const parent={"self-service":"home","launches":"self-service","vox":"self-service","priorities":"self-service","excellence":"home","qa":"excellence","service360":"excellence"};
+    const parent={"self-service":"home","maf-one":"self-service","bots":"self-service","launches":"self-service","priorities":"self-service","automation":"home","vox":"automation","retail":"automation","excellence":"home","qa-intro":"excellence","qa":"excellence","service360":"excellence"};
     show(parent[current]||"home");
   });
   show(location.hash.slice(1)||"home",true);
