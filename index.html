@@ -1023,141 +1023,6 @@ body.maf-modal-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){#ops-retail .retail-step,#ops-retail .retail-step::after,#ops-retail .retail-traveler{transition:none!important;animation:none!important}}
 
 
-/* MAF One Recap v4: content-sized cards, balanced large-screen spacing.
-   Keep card contents fully legible instead of stretching white panels to viewport height. */
-#maf-recap .maf-strategy{
-  display:flex;flex-direction:column;justify-content:center;align-items:stretch;
-  gap:clamp(12px,1.85vh,25px);
-  padding:clamp(17px,2vw,37px);
-}
-#maf-recap .maf-strategy-head,
-#maf-recap .maf-strategy-grid,
-#maf-recap .maf-strategy-foot{
-  width:100%;max-width:1660px;margin-left:auto;margin-right:auto;
-}
-#maf-recap .maf-strategy-head{
-  gap:clamp(7px,.9vh,12px);flex:0 0 auto;
-}
-#maf-recap .maf-strategy-head span{
-  font-size:clamp(11px,.74vw,14px);line-height:1.35;letter-spacing:1.35px;
-}
-#maf-recap .maf-strategy-head h2{
-  font-size:clamp(30px,2.25vw,43px);line-height:1.12;
-  letter-spacing:-.75px;margin:0;
-}
-#maf-recap .maf-strategy-head>strong{
-  font-size:clamp(12px,.84vw,16px);line-height:1.35;
-}
-#maf-recap .maf-strategy-grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  grid-auto-rows:min-content;align-items:stretch;
-  flex:0 1 auto;min-height:0;gap:clamp(13px,1.35vw,24px);
-}
-#maf-recap .maf-strategy-stage{
-  display:block;position:relative;align-self:stretch;
-  width:100%;min-width:0;min-height:0;height:auto;max-height:none;
-  padding:clamp(17px,1.35vw,26px);
-  overflow:hidden;border-radius:13px;
-  box-shadow:0 7px 20px #25001612;
-}
-#maf-recap .maf-card-content{
-  display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;
-  width:100%;height:max-content;min-width:0;
-  gap:clamp(8px,1vh,13px);overflow:visible;
-}
-#maf-recap .maf-strategy-index{
-  top:clamp(21px,1.55vw,30px);left:clamp(17px,1.35vw,26px);
-  font-size:clamp(12px,.82vw,15px);
-}
-#maf-recap .maf-card-content>.maf-stage-pill{
-  min-height:32px;min-width:clamp(118px,9vw,166px);
-  padding:7px 13px;font-size:clamp(11px,.7vw,13px);
-}
-#maf-recap .maf-card-content>h3{
-  font-size:clamp(22px,1.4vw,28px);
-  line-height:1.13;margin:clamp(3px,.5vh,7px) 0 0;
-}
-#maf-recap .maf-card-content>h4{
-  font-size:clamp(19px,1.2vw,24px);line-height:1.17;
-}
-#maf-recap .maf-card-content>.maf-strategy-description{
-  margin:clamp(3px,.55vh,8px) 0 0;
-  font-size:clamp(13px,.88vw,17px);line-height:1.44;
-}
-#maf-recap .maf-card-content>.maf-channel-pills{
-  gap:clamp(5px,.48vw,9px);margin:clamp(4px,.65vh,9px) 0 0;
-}
-#maf-recap .maf-card-content .maf-channel{
-  font-size:clamp(11px,.7vw,13px);
-  padding:clamp(4px,.5vh,7px) clamp(7px,.57vw,11px);
-}
-#maf-recap .maf-card-content>.maf-strategy-approach{
-  margin:clamp(8px,1.1vh,16px) 0 0;
-  padding-top:clamp(10px,1.35vh,17px);
-  gap:clamp(5px,.65vh,9px);
-}
-#maf-recap .maf-card-content .maf-strategy-approach>span{
-  font-size:clamp(10px,.67vw,12px);
-}
-#maf-recap .maf-card-content .maf-strategy-approach p{
-  font-size:clamp(13px,.84vw,16px);line-height:1.4;
-}
-#maf-recap .maf-strategy-foot{
-  flex:0 0 auto;min-height:0;
-  padding:clamp(12px,1.5vh,19px) clamp(14px,1.3vw,24px);
-  gap:clamp(10px,1.05vw,18px);
-}
-#maf-recap .maf-strategy-foot strong{
-  font-size:clamp(13px,.85vw,17px);
-}
-#maf-recap .maf-strategy-foot span{
-  font-size:clamp(12px,.8vw,15px);line-height:1.4;
-}
-@media(min-width:1000px) and (max-height:750px){
-  #maf-recap .maf-strategy{gap:clamp(6px,1vh,11px);padding:clamp(10px,1.45vh,18px)}
-  #maf-recap .maf-strategy-head{gap:3px}
-  #maf-recap .maf-strategy-head h2{font-size:clamp(25px,1.85vw,35px)}
-  #maf-recap .maf-strategy-head span{font-size:10px}
-  #maf-recap .maf-strategy-head>strong{font-size:11px}
-  #maf-recap .maf-strategy-grid{gap:clamp(8px,1vw,16px)}
-  #maf-recap .maf-strategy-stage{padding:clamp(10px,.95vw,18px)}
-  #maf-recap .maf-strategy-index{top:clamp(15px,1.25vw,24px);left:clamp(10px,.95vw,18px)}
-  #maf-recap .maf-card-content{gap:clamp(4px,.65vh,7px)}
-  #maf-recap .maf-card-content>.maf-stage-pill{min-height:26px;padding:5px 10px;font-size:10px}
-  #maf-recap .maf-card-content>h3{font-size:clamp(18px,1.2vw,23px);margin-top:2px}
-  #maf-recap .maf-card-content>h4{font-size:clamp(17px,1.07vw,21px)}
-  #maf-recap .maf-card-content>.maf-strategy-description{font-size:clamp(11px,.82vw,15px);line-height:1.3;margin-top:2px}
-  #maf-recap .maf-card-content>.maf-channel-pills{gap:4px;margin-top:3px}
-  #maf-recap .maf-card-content .maf-channel{font-size:10px;padding:3px 7px}
-  #maf-recap .maf-card-content>.maf-strategy-approach{margin-top:5px;padding-top:7px;gap:4px}
-  #maf-recap .maf-card-content .maf-strategy-approach p{font-size:clamp(11px,.78vw,14px);line-height:1.28}
-  #maf-recap .maf-strategy-foot{padding:8px 12px;gap:9px}
-  #maf-recap .maf-strategy-foot strong,#maf-recap .maf-strategy-foot span{font-size:11px}
-}
-@media(max-width:999px){
-  #maf-recap .maf-strategy{
-    display:flex;justify-content:flex-start;
-    overflow-x:hidden;overflow-y:auto;
-    padding:clamp(12px,2.3vw,22px);gap:clamp(10px,1.4vh,17px);
-  }
-  #maf-recap .maf-strategy-head h2{font-size:clamp(24px,3vw,34px)}
-  #maf-recap .maf-strategy-grid{
-    grid-template-columns:1fr;flex:0 0 auto;gap:11px;
-  }
-  #maf-recap .maf-strategy-stage{
-    overflow:visible;padding:clamp(14px,2.5vw,21px);
-  }
-  #maf-recap .maf-card-content{height:auto;gap:7px}
-  #maf-recap .maf-card-content>h3{font-size:clamp(20px,2.7vw,25px)}
-  #maf-recap .maf-card-content>h4{font-size:clamp(18px,2.3vw,22px)}
-  #maf-recap .maf-card-content>.maf-strategy-description,
-  #maf-recap .maf-card-content .maf-strategy-approach p{
-    font-size:clamp(12px,1.6vw,15px);line-height:1.4
-  }
-  #maf-recap .maf-strategy-foot{flex-wrap:wrap}
-}
-
-
 /* Replace baked text in the Next / Expand slide with the actual Carrefour and HyperMax brand logos. */
 #maf-live .maf-market-static-next .maf-next-logo-patch{
  position:absolute;z-index:1;display:flex;align-items:center;
@@ -1171,97 +1036,61 @@ body.maf-modal-open{overflow:hidden}
 #maf-live .maf-market-static-next .maf-next-logo-hypermax{left:52.1%;top:55%;width:27%;height:10.4%}
 
 
-/* MAF One Recap v5 - presentation-ready proportion and legible paragraph spacing.
-   Intentionally anchor the header near the top: no giant empty burgundy header band. */
-#maf-recap .maf-strategy{
- justify-content:flex-start;
- gap:clamp(13px,2vh,26px);
- padding:clamp(17px,2.5vh,34px) clamp(22px,2.1vw,44px);
+
+/* Recap v6: natural content groups, consistent typography, no zoom or stretched gaps. */
+#maf-recap .maf-strategy{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:clamp(11px,1.5vh,18px);padding:clamp(16px,2.3vh,28px) clamp(16px,2vw,36px);overflow-x:hidden;overflow-y:auto}
+#maf-recap .maf-strategy-head,#maf-recap .maf-strategy-grid,#maf-recap .maf-strategy-foot{width:100%;max-width:none;margin-left:0;margin-right:0}
+#maf-recap .maf-strategy-head{display:flex;flex-direction:column;gap:clamp(5px,.8vh,9px);flex:0 0 auto}
+#maf-recap .maf-strategy-head span{font-size:clamp(11px,.75vw,14px);letter-spacing:1.35px;line-height:1.3}
+#maf-recap .maf-strategy-head h2{font-size:clamp(29px,2.2vw,45px);letter-spacing:-.7px;margin:0;line-height:1.13}
+#maf-recap .maf-strategy-head>strong{font-size:clamp(11px,.85vw,16px);line-height:1.35}
+#maf-recap .maf-strategy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));flex:0 0 auto;min-height:0;max-height:none;grid-auto-rows:auto;align-items:stretch;gap:clamp(12px,1.25vw,22px)}
+#maf-recap .maf-strategy-stage{position:relative;display:flex;flex-direction:column;min-width:0;min-height:clamp(266px,35vh,365px);height:auto;max-height:none;overflow:hidden;padding:clamp(15px,1.25vw,24px);border-radius:13px}
+#maf-recap .maf-strategy-index{top:clamp(20px,1.55vw,27px);left:clamp(16px,1.25vw,24px);font-size:clamp(12px,.8vw,16px)}
+#maf-recap .maf-card-content{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:clamp(9px,1.2vh,14px);height:100%;min-height:0;width:100%;overflow:visible;zoom:1!important}
+#maf-recap .maf-card-content>.maf-stage-pill{display:flex;align-self:flex-end;align-items:center;justify-content:center;position:static;min-height:29px;min-width:clamp(105px,10vw,159px);padding:5px 12px;margin:0;font-size:clamp(10px,.62vw,12px)}
+#maf-recap .maf-stage-heading{display:flex;flex-direction:column;gap:clamp(4px,.7vh,8px);margin-top:1px}
+#maf-recap .maf-stage-heading h3{margin:0;padding:0;font-size:clamp(20px,1.35vw,27px);line-height:1.12}
+#maf-recap .maf-stage-heading h4{margin:0;padding:0;font-size:clamp(18px,1.13vw,23px);line-height:1.16}
+#maf-recap .maf-stage-body{display:flex;flex-direction:column;gap:clamp(9px,1.35vh,16px)}
+#maf-recap .maf-stage-body .maf-strategy-description{display:block;margin:0;padding:0;min-height:0;overflow:visible;font-size:clamp(13px,.87vw,17px);line-height:1.42}
+#maf-recap .maf-stage-body .maf-channel-pills{display:flex;flex-wrap:wrap;gap:5px;margin:0;padding:0;min-height:0}
+#maf-recap .maf-stage-body .maf-channel{font-size:clamp(10px,.67vw,13px);padding:4px 8px;line-height:1.15}
+#maf-recap .maf-card-content>.maf-strategy-approach{display:flex;flex-direction:column;align-self:stretch;flex:0 0 auto;margin-top:auto;padding-top:clamp(9px,1.3vh,14px);gap:clamp(5px,.8vh,9px);border-top:1px solid #e7dbe3}
+#maf-recap .maf-strategy-approach>span{font-size:clamp(10px,.65vw,12px);letter-spacing:1.4px;line-height:1.2}
+#maf-recap .maf-strategy-approach p{margin:0;font-size:clamp(12px,.82vw,16px);line-height:1.35}
+#maf-recap .maf-strategy-foot{flex:0 0 auto;min-height:0;margin-top:0;display:flex;align-items:center;padding:clamp(10px,1.3vh,16px) clamp(12px,1vw,21px);gap:12px}
+#maf-recap .maf-strategy-foot strong{font-size:clamp(11px,.8vw,15px);white-space:normal}
+#maf-recap .maf-strategy-foot span{flex:1;min-width:0;font-size:clamp(11px,.72vw,14px);line-height:1.3}
+#maf-recap .maf-strategy-foot button{flex:0 0 auto;white-space:nowrap;font-size:clamp(10px,.7vw,13px)}
+@media(min-width:1100px) and (min-height:875px){
+ #maf-recap .maf-strategy{justify-content:center;gap:clamp(16px,2vh,23px)}
+ #maf-recap .maf-strategy-stage{min-height:clamp(360px,38vh,430px)}
 }
-#maf-recap .maf-strategy-head,
-#maf-recap .maf-strategy-grid,
-#maf-recap .maf-strategy-foot{max-width:1760px}
-#maf-recap .maf-strategy-head{gap:clamp(6px,1vh,12px)}
-#maf-recap .maf-strategy-head span{
- font-size:clamp(12px,.78vw,15px);letter-spacing:1.55px;line-height:1.3
-}
-#maf-recap .maf-strategy-head h2{
- font-size:clamp(32px,2.4vw,47px);line-height:1.12;letter-spacing:-.8px
-}
-#maf-recap .maf-strategy-head>strong{
- font-size:clamp(12px,.85vw,17px);line-height:1.38
-}
-#maf-recap .maf-strategy-grid{
- flex:1 1 auto;min-height:0;max-height:clamp(355px,55vh,620px);
- grid-auto-rows:minmax(0,1fr);align-items:stretch;
- gap:clamp(14px,1.35vw,24px)
-}
-#maf-recap .maf-strategy-stage{
- display:flex;flex-direction:column;min-height:0;height:100%;
- padding:clamp(17px,1.42vw,27px)
-}
-#maf-recap .maf-card-content{
- height:100%;min-height:0;gap:clamp(9px,1.25vh,17px);
- justify-content:space-between
-}
-#maf-recap .maf-card-content>.maf-stage-pill{margin-bottom:clamp(1px,.35vh,5px)}
-#maf-recap .maf-card-content>h3{
- margin-top:0;font-size:clamp(23px,1.42vw,30px);line-height:1.12
-}
-#maf-recap .maf-card-content>h4{
- font-size:clamp(20px,1.18vw,25px);line-height:1.16
-}
-#maf-recap .maf-card-content>.maf-strategy-description{
- margin-top:0;font-size:clamp(14px,.92vw,18px);line-height:1.48
-}
-#maf-recap .maf-card-content>.maf-channel-pills{margin-top:0;gap:clamp(5px,.48vw,9px)}
-#maf-recap .maf-card-content .maf-channel{
- font-size:clamp(11px,.7vw,14px);padding:clamp(4px,.6vh,7px) clamp(8px,.55vw,11px)
-}
-#maf-recap .maf-card-content>.maf-strategy-approach{
- flex:0 0 auto;margin-top:clamp(3px,.65vh,8px);
- padding-top:clamp(10px,1.35vh,17px);gap:clamp(6px,.7vh,10px)
-}
-#maf-recap .maf-card-content .maf-strategy-approach p{
- font-size:clamp(13px,.85vw,17px);line-height:1.44
-}
-#maf-recap .maf-strategy-foot{
- margin-top:0;flex:0 0 auto;
- padding:clamp(11px,1.5vh,18px) clamp(14px,1.3vw,22px)
-}
-@media(min-width:1000px) and (max-height:790px){
- #maf-recap .maf-strategy{
-  gap:clamp(9px,1.5vh,17px);
-  padding:clamp(13px,2vh,20px) clamp(17px,1.9vw,34px)
- }
- #maf-recap .maf-strategy-head{gap:clamp(3px,.6vh,6px)}
- #maf-recap .maf-strategy-head h2{font-size:clamp(29px,2.15vw,41px)}
- #maf-recap .maf-strategy-head>strong{font-size:clamp(11px,.8vw,14px)}
- #maf-recap .maf-strategy-grid{max-height:none;gap:clamp(10px,1vw,19px)}
- #maf-recap .maf-strategy-stage{padding:clamp(12px,1.12vw,20px)}
- #maf-recap .maf-card-content{gap:clamp(7px,.95vh,12px)}
- #maf-recap .maf-card-content>h3{font-size:clamp(20px,1.35vw,27px)}
- #maf-recap .maf-card-content>h4{font-size:clamp(18px,1.1vw,23px)}
- #maf-recap .maf-card-content>.maf-strategy-description{
-  font-size:clamp(12px,.82vw,16px);line-height:1.35
- }
- #maf-recap .maf-card-content>.maf-strategy-approach{padding-top:8px;margin-top:3px}
- #maf-recap .maf-card-content .maf-strategy-approach p{
-  font-size:clamp(12px,.79vw,15px);line-height:1.33
- }
- #maf-recap .maf-strategy-foot{padding:8px 12px}
+@media(min-width:1000px) and (max-height:720px){
+ #maf-recap .maf-strategy{padding:clamp(9px,1.6vh,17px) clamp(14px,1.5vw,28px);gap:8px}
+ #maf-recap .maf-strategy-head h2{font-size:clamp(26px,2vw,38px)}
+ #maf-recap .maf-strategy-head span{font-size:10px}
+ #maf-recap .maf-strategy-head>strong{font-size:11px}
+ #maf-recap .maf-strategy-stage{min-height:0;padding:clamp(12px,.95vw,18px)}
+ #maf-recap .maf-card-content{gap:clamp(6px,.9vh,10px)}
+ #maf-recap .maf-stage-heading h3{font-size:clamp(18px,1.2vw,25px)}
+ #maf-recap .maf-stage-heading h4{font-size:clamp(16px,1vw,21px)}
+ #maf-recap .maf-stage-body{gap:8px}
+ #maf-recap .maf-stage-body .maf-strategy-description{font-size:clamp(11px,.8vw,15px);line-height:1.3}
+ #maf-recap .maf-card-content>.maf-strategy-approach{padding-top:7px}
+ #maf-recap .maf-strategy-approach p{font-size:clamp(11px,.75vw,14px)}
+ #maf-recap .maf-strategy-foot{padding:8px 10px}
 }
 @media(max-width:999px){
  #maf-recap .maf-strategy{justify-content:flex-start;overflow-y:auto}
- #maf-recap .maf-strategy-grid{
-  flex:0 0 auto;max-height:none;grid-template-columns:1fr;
-  grid-auto-rows:auto;gap:12px
- }
- #maf-recap .maf-strategy-stage{height:auto}
- #maf-recap .maf-card-content{height:auto;justify-content:flex-start}
+ #maf-recap .maf-strategy-grid{grid-template-columns:1fr;gap:11px}
+ #maf-recap .maf-strategy-stage{min-height:0;height:auto}
+ #maf-recap .maf-card-content{height:auto}
+ #maf-recap .maf-stage-body .maf-strategy-description{font-size:14px}
+ #maf-recap .maf-card-content>.maf-strategy-approach{margin-top:6px}
+ #maf-recap .maf-strategy-foot{flex-wrap:wrap}
 }
-
-
 /* Align replacement logos to the same baseline, scale and left edge as other NEXT cards. */
 #maf-live .maf-market-static-next .maf-next-logo-patch{
  padding-left:1.1%;display:flex;justify-content:flex-start;align-items:center;
@@ -1289,7 +1118,7 @@ body.maf-modal-open{overflow:hidden}
  <div class="maf-panel active" id="maf-recap">
   <div class="maf-strategy">
    <div class="maf-strategy-head"><div><span>MAF ONE ROLLOUT STRATEGY · UAE</span><h2>From AI Assistant to MAF Super Agent</h2></div><strong>VISION: ONE AI PLATFORM · EVERY MAF BRAND · EVERY CUSTOMER · EVERY CHANNEL</strong></div>
-   <div class="maf-strategy-grid"><article class="maf-strategy-stage"><span class="maf-strategy-index">01</span><div class="maf-card-content"><div class="maf-stage-pill">Foundation</div><h3>SUPER AGENT</h3><h4>Inform</h4><p class="maf-strategy-description">Create a single AI assistant that answers customer enquiries across MAF websites, mobile applications and IVR.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Launch the MAF ONE Digital Assistant for information on all MAF brands</p></div></div></article><article class="maf-strategy-stage"><span class="maf-strategy-index">02</span><div class="maf-card-content"><div class="maf-stage-pill">Scale to Support</div><h3>SUPER AGENT +</h3><h4>Assist</h4><p class="maf-strategy-description">Enable customers to self-serve and manage existing bookings, orders, memberships and service requests without contacting customer care.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span><span class="maf-channel maf-channel-4">WhatsApp</span></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Help customers manage their existing relationship with all MAF brands</p></div></div></article><article class="maf-strategy-stage"><span class="maf-strategy-index">03</span><div class="maf-card-content"><div class="maf-stage-pill">Scale to Sell</div><h3>SUPER AGENT ++</h3><h4>Personalise & Act</h4><p class="maf-strategy-description">Move from answering questions to completing transactions. Add personalised recommendations for offers, upsell and cross-sell.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span><span class="maf-channel maf-channel-4">WhatsApp</span><span class="maf-channel maf-channel-5">Social</span></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Help customers manage their end-to-end interactions with all MAF brands</p></div></div></article></div>
+   <div class="maf-strategy-grid"><article class="maf-strategy-stage"><span class="maf-strategy-index">01</span><div class="maf-card-content"><div class="maf-stage-pill">Foundation</div><div class="maf-stage-heading"><h3>SUPER AGENT</h3><h4>Inform</h4></div><div class="maf-stage-body"><p class="maf-strategy-description">Create a single AI assistant that answers customer enquiries across MAF websites, mobile applications and IVR.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span></div></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Launch the MAF ONE Digital Assistant for information on all MAF brands</p></div></div></article><article class="maf-strategy-stage"><span class="maf-strategy-index">02</span><div class="maf-card-content"><div class="maf-stage-pill">Scale to Support</div><div class="maf-stage-heading"><h3>SUPER AGENT +</h3><h4>Assist</h4></div><div class="maf-stage-body"><p class="maf-strategy-description">Enable customers to self-serve and manage existing bookings, orders, memberships and service requests without contacting customer care.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span><span class="maf-channel maf-channel-4">WhatsApp</span></div></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Help customers manage their existing relationship with all MAF brands</p></div></div></article><article class="maf-strategy-stage"><span class="maf-strategy-index">03</span><div class="maf-card-content"><div class="maf-stage-pill">Scale to Sell</div><div class="maf-stage-heading"><h3>SUPER AGENT ++</h3><h4>Personalise & Act</h4></div><div class="maf-stage-body"><p class="maf-strategy-description">Move from answering questions to completing transactions. Add personalised recommendations for offers, upsell and cross-sell.</p><div class="maf-channel-pills"><span class="maf-channel maf-channel-0">Website</span><span class="maf-channel maf-channel-1">App</span><span class="maf-channel maf-channel-2">Voice</span><span class="maf-channel maf-channel-3">Chat</span><span class="maf-channel maf-channel-4">WhatsApp</span><span class="maf-channel maf-channel-5">Social</span></div></div><div class="maf-strategy-approach"><span>APPROACH</span><p>Help customers manage their end-to-end interactions with all MAF brands</p></div></div></article></div>
    <div class="maf-strategy-foot"><strong>The foundation has been established.</strong><span>Now move beyond isolated business-unit implementations towards one intelligent assistant serving every MAF brand.</span><button type="button" data-sub="live" aria-label="Explore Market Launches">VIEW MARKET LAUNCHES ↗</button></div>
   </div>
  </div>
@@ -1330,34 +1159,9 @@ body.maf-modal-open{overflow:hidden}
  const stages={qa:["Interaction captured","Rubric and deterministic checks","AI-supported evidence review","Coaching opportunities surfaced"],share:["Ambassador home","Training & knowledge progression","Campaigns & broadcasts","Interactions & engagement"],vox:["Customer emails arrive","AI extracts intent","Correct ticket category assigned","Structured tickets created","Structured responses: manual or automatic"],retail:["Contact center site visit","Analyse the day in the life of an agent","Build and release optimizations","Track efficiencies and customer feedback","Repeat the improvement cycle"]};
  function showPage(page,updateHash=true){if(!pages.includes(page))page="overview";state.page=page;qsa('.screen').forEach(el=>el.classList.toggle('active',el.id==='page-'+page));qsa('[data-page]').forEach(b=>{const on=b.dataset.page===page;b.classList.toggle('active',on);if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});if(updateHash)history.replaceState(null,'','#'+page);document.title=(page==='overview'?'Customer Care Solutions':{selfservice:'MAF One',automation:'VOX Email Agentic',performance:'MAFerLens',operations:'Operations Excellence'}[page])+' | Customer Care Solutions';state.lastTick=performance.now();if(page==='selfservice')showMaf('recap');if(page==='performance')renderTour('qa');if(page==='automation')renderTour('vox');if(page==='operations'){if(state.ops==='retail')renderRetail();else renderTour('share');}}
  
-let mafRecapFitRequest=0;
-function fitMafRecap(){
- const panel=qs('#maf-recap'),page=qs('#page-selfservice');
- if(!panel||!page||!panel.classList.contains('active')||!page.classList.contains('active'))return;
- const cards=qsa('#maf-recap .maf-strategy-stage');
- cards.forEach(card=>{
-   const content=card.querySelector('.maf-card-content');
-   if(!content)return;
-   content.style.zoom='1';
-   const styles=getComputedStyle(card);
-   const available=card.clientHeight-(parseFloat(styles.paddingTop)||0)-(parseFloat(styles.paddingBottom)||0)-3;
-   if(available<=12)return;
-   if(content.getBoundingClientRect().height<=available)return;
-   let min=.57,max=1;
-   for(let n=0;n<10;n++){
-      const middle=(min+max)/2;
-      content.style.zoom=middle.toFixed(4);
-      if(content.getBoundingClientRect().height>available)max=middle;
-      else min=middle;
-   }
-   content.style.zoom=Math.max(.57,min-.01).toFixed(3);
- });
-}
-function scheduleMafRecapFit(){
- if(mafRecapFitRequest)cancelAnimationFrame(mafRecapFitRequest);
- mafRecapFitRequest=requestAnimationFrame(()=>{mafRecapFitRequest=0;fitMafRecap()});
-}
-
+/* Natural card layout: clear stale inline zoom, never shrink the copy. */
+function fitMafRecap(){qsa('#maf-recap .maf-card-content').forEach(el=>el.style.removeProperty('zoom'));}
+function scheduleMafRecapFit(){requestAnimationFrame(fitMafRecap);}
  function showMaf(tab){if(!['recap','live'].includes(tab))return;state.maf=tab;qsa('[data-sub]').forEach(b=>{const on=b.dataset.sub===tab;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on))});qsa('.maf-panel').forEach(p=>p.classList.toggle('active',p.id==='maf-'+tab));if(tab==='live'){qsa('#maf-live [data-launch]').forEach(b=>b.setAttribute('aria-pressed','false'));if(!qs('#maf-launch-modal').hidden)closeMafLaunch();requestAnimationFrame(fitMafSlide)}else{scheduleMafRecapFit()}}
  const mafLaunches={
  "share-live":{name:"SHARE AI Agent",desc:"Live in KSA, Oman and Egypt · 62% containment"},
